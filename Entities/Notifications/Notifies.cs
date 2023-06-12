@@ -38,6 +38,33 @@ namespace Entities.Notifications
             return true;
         }
 
+        public bool ValidateStringPropertyInt(int value, string nameProperty)
+        {
+            if (value < 1 || string.IsNullOrWhiteSpace(nameProperty))
+            {
+                Notifications.Add(new Notifies
+                {
+                    mensage = "The value must be greater than 0!",
+                    NameProp = nameProperty
+                });
+                return false;
+            }
+            return true;
+        }
+
+        public bool ValidateStringPropertyDecimal(decimal value, string nameProperty)
+        {
+            if (value < 1 || string.IsNullOrWhiteSpace(nameProperty))
+            {
+                Notifications.Add(new Notifies
+                {
+                    mensage = "The value must be greater than 0!",
+                    NameProp = nameProperty
+                });
+                return false;
+            }
+            return true;
+        }
 
     }
 }

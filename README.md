@@ -3,15 +3,15 @@ A study project, (E-commerce)
 Technologies used in the project:
 
 
-DDD (Domain Driven Design)
+* DDD (Domain Driven Design)
 
-Microsoft Identity: User Management
+* Microsoft Identity: User Management
 
-Framework: ASP.NET Core
+* Framework: ASP.NET Core
 
-Programming language: C#
+* Programming language: C#
 
-Database: SQL Server
+* Database: SQL Server
 
-Front End Framework: Bootstrap
+* Front End Framework: Bootstrap
 

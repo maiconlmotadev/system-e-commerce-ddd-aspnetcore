@@ -38,7 +38,7 @@ namespace Entities.Notifications
             return true;
         }
 
-        public bool ValidateStringPropertyInt(int value, string nameProperty)
+        public bool ValidateIntProperty(int value, string nameProperty)
         {
             if (value < 1 || string.IsNullOrWhiteSpace(nameProperty))
             {
@@ -52,7 +52,7 @@ namespace Entities.Notifications
             return true;
         }
 
-        public bool ValidateStringPropertyDecimal(decimal value, string nameProperty)
+        public bool ValidateDecimalProperty(decimal value, string nameProperty)
         {
             if (value < 1 || string.IsNullOrWhiteSpace(nameProperty))
             {

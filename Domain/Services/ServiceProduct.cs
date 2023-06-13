@@ -17,14 +17,27 @@ namespace Domain.Services
             _IProduct = IProduct;   
         }
 
-        public Task AddProduct(Product product)
+        public async Task AddProduct(Product product)
         {
-            throw new NotImplementedException();
+            var validateName = product.ValidateStringProperty(product.Name, "Name");
+            var validateValue = product.ValidateDecimalProperty(product.Price, "Price");
+            
+            if (validateName && validateValue)
+            {
+                product.State = true;
+                await _IProduct.Add(product);
+            }
         }
-
-        public Task UpdateProduct(Product product)
+        
+        public async Task UpdateProduct(Product product)
         {
-            throw new NotImplementedException();
+            var validateName = product.ValidateStringProperty(product.Name, "Name");
+            var validateValue = product.ValidateDecimalProperty(product.Price, "Price");
+
+            if (validateName && validateValue)
+            {
+                await _IProduct.Update(product);
+            }
         }
     }
 }

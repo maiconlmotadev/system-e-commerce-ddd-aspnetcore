@@ -18,14 +18,15 @@ namespace Entities.Entities
 
         [Column("PRO_NAME")]
         [Display(Name = "Name")]
-        public int Name { get; set; }
+        public string Name { get; set; }
 
-        [Column("PRO_VALUE")]
-        [Display(Name = "Value")]
-        public int Value { get; set; }
+        [Column("PRO_PRICE")]
+        [Display(Name = "Price")]
+        public decimal Price { get; set; }
 
         [Column("PRO_STATE")]
         [Display(Name = "State")]
-        public int State { get; set; }
+        public bool State { get; set; }
+
     }
 }

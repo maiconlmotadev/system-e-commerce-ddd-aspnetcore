@@ -14,7 +14,7 @@ namespace Entities.Entities
     {
         [Column("PRO_ID")]
         [Display(Name ="Code")]
-        public int ProductId { get; set; }
+        public int Id { get; set; }
 
         [Column("PRO_NAME")]
         [Display(Name = "Name")]

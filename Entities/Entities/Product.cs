@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Entities
 {
-    [Table("Product")]
+    [Table("TB_PRODUCT")]
     public class Product : Notifies
     {
         [Column("PRO_ID")]
@@ -19,6 +19,7 @@ namespace Entities.Entities
 
         [Column("PRO_NAME")]
         [Display(Name = "Name")]
+        [MaxLength(255)]
         public string Name { get; set; }
 
         [Column("PRD_DESCRIPTION")]

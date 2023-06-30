@@ -20,7 +20,7 @@ namespace Entities.Entities
 
         [Display(Name = "PRODUCT")]
         [ForeignKey("TB_PRODUCT")]
-        [Column(Order = 1)]
+        //[Column(Order = 1)]
         public int IdProduct { get; set; }
         public virtual Product Product { get; set; }
 
@@ -32,10 +32,9 @@ namespace Entities.Entities
         [Display(Name = "QUANTITY")]
         public int BuyQuantity { get; set; }
 
-
-        [Display(Name = "User")]
+        [Display(Name = "USER")]
         [ForeignKey("ApplicationUser")]
-        [Column(Order = 1)]
+        //[Column(Order = 1)]
         public string UserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
     }

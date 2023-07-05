@@ -26,7 +26,6 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
 // INJE«’ES DE DEPENDÍNCIA
-
 void ConfigureServices(IServiceCollection services)
 {
     // INTERFACE AND REPOSITORY

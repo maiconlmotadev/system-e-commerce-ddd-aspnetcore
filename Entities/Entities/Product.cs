@@ -18,7 +18,7 @@ namespace Entities.Entities
         public int Id { get; set; }
 
         [Column("PRO_NAME")]
-        [Display(Name = "Name")]
+        [Display(Name = "NAME")]
         [MaxLength(255)]
         public string Name { get; set; }
 

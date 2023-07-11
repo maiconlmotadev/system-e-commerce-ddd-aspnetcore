@@ -10,6 +10,5 @@ namespace Domain.Interfaces.InterfaceProduct
 {
     public interface IProduct : IGeneric<Product>
     {
-
     }
 }

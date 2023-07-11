@@ -1,4 +1,5 @@
 ﻿using ApplicationApp.Interfaces;
+using Domain.Interfaces.InterfaceProduct;
 using Domain.Interfaces.InterfaceServices;
 using Entities.Entities;
 using System;
@@ -11,10 +12,10 @@ namespace ApplicationApp.OpenApp
 {
     public class ProductApp : IProductApp
     {
-        IProductApp _IProduct;
+        IProduct _IProduct;
         IServiceProduct _IServiceProduct;
 
-        public ProductApp(IProductApp IProduct, IServiceProduct IServiceProduct)
+        public ProductApp(IProduct IProduct, IServiceProduct IServiceProduct)
         {
             _IProduct = IProduct;
             _IServiceProduct = IServiceProduct;
@@ -45,7 +46,7 @@ namespace ApplicationApp.OpenApp
            return await _IProduct.GetEntityById(Id);
         }
 
-        public async Task<Product> List()
+        public async Task<List<Product>> List()
         {
             return await _IProduct.List();
         }
@@ -54,7 +55,5 @@ namespace ApplicationApp.OpenApp
         {
             await _IProduct.Update(Object);
         }
-
-       
     }
 }

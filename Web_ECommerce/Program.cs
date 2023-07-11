@@ -23,21 +23,19 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ContextBase>();
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
-
 // INJE«’ES DE DEPENDÍNCIA
-void ConfigureServices(IServiceCollection services)
-{
-    // INTERFACE AND REPOSITORY
-    services.AddSingleton(typeof(IGeneric<>), typeof(RepositoryGenerics<>));
-    services.AddSingleton<IProduct, RepositoryProduct>();
 
-    // APPLICATION INTERFACE
-    services.AddSingleton<IProductApp, ProductApp>();
+// INTERFACE AND REPOSITORY
+builder.Services.AddSingleton(typeof(IGeneric<>), typeof(RepositoryGenerics<>));
+builder.Services.AddSingleton<IProduct, RepositoryProduct>();
 
-    // DOMAIN SERVICE
-    services.AddSingleton<IServiceProduct, ServiceProduct>();
-}
+// APPLICATION INTERFACE
+builder.Services.AddSingleton<IProductApp, ProductApp>();
+
+// DOMAIN SERVICE
+builder.Services.AddSingleton<IServiceProduct, ServiceProduct>();
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

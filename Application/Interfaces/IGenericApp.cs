@@ -13,6 +13,6 @@ namespace ApplicationApp.Interfaces
         Task Delete(T Object);
 
         Task<T> GetEntityById(int Id);
-        Task<T> List();
+        Task<List<T>> List();
     }
 }

@@ -9,6 +9,7 @@ using ApplicationApp.Interfaces;
 using ApplicationApp.OpenApp;
 using Domain.Interfaces.InterfaceServices;
 using Domain.Services;
+using Entities.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,11 +20,11 @@ builder.Services.AddDbContext<ContextBase>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ContextBase>();
 builder.Services.AddControllersWithViews();
 
-// INJE«’ES DE DEPENDÍNCIA
+// DEPENDENCE INJECTIONS
 
 // INTERFACE AND REPOSITORY
 builder.Services.AddSingleton(typeof(IGeneric<>), typeof(RepositoryGenerics<>));
@@ -35,7 +36,10 @@ builder.Services.AddSingleton<IProductApp, ProductApp>();
 // DOMAIN SERVICE
 builder.Services.AddSingleton<IServiceProduct, ServiceProduct>();
 
+
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

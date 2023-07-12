@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Entities
 {
-    public class ApplicationUser : IdentityUser<string>
+    public class ApplicationUser : IdentityUser
     {
         [Column("USR_NIF")]
         [MaxLength(50)]

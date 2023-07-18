@@ -5,11 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Configuration
 {
-    public class ContextBase : IdentityDbContext<ApplicationUser> 
+    public class ContextBase : IdentityDbContext<ApplicationUser>
     {
         public ContextBase(DbContextOptions<ContextBase> options) : base(options)
         {
-
         }
 
         public DbSet<Product> Product { get; set; }
@@ -27,7 +26,7 @@ namespace Infrastructure.Configuration
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<ApplicationUser>().ToTable("AspNetUser").HasKey(t => t.Id);
+            builder.Entity<ApplicationUser>().ToTable("AspNetUsers").HasKey(t => t.Id);
             base.OnModelCreating(builder);
         }
 

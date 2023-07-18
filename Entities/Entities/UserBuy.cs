@@ -15,24 +15,24 @@ namespace Entities.Entities
     public class UserBuy : Notifies
     {
         [Column("CUS_ID")]
-        [Display(Name = "CODE")]
+        [Display(Name = "Code")]
         public int Id { get; set; }
 
-        [Display(Name = "PRODUCT")]
+        [Display(Name = "Product")]
         [ForeignKey("TB_PRODUCT")]
         //[Column(Order = 1)]
         public int IdProduct { get; set; }
         public virtual Product Product { get; set; }
 
         [Column("CUS_STATE")]
-        [Display(Name = "STATE")]
+        [Display(Name = "State")]
         public EnumBuyState State { get; set; }
 
         [Column("CSU_QTY")]
-        [Display(Name = "QUANTITY")]
+        [Display(Name = "Quantity")]
         public int BuyQuantity { get; set; }
 
-        [Display(Name = "USER")]
+        [Display(Name = "User")]
         [ForeignKey("ApplicationUser")]
         //[Column(Order = 1)]
         public string UserId { get; set; }

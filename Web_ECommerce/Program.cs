@@ -10,12 +10,14 @@ using ApplicationApp.OpenApp;
 using Domain.Interfaces.InterfaceServices;
 using Domain.Services;
 using Entities.Entities;
+using FluentAssertions.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<ContextBase>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -36,9 +38,11 @@ builder.Services.AddSingleton<IProductApp, ProductApp>();
 // DOMAIN SERVICE
 builder.Services.AddSingleton<IServiceProduct, ServiceProduct>();
 
+// 
+//builder.Services.AddSingleton<ApplicationUser>();
+
 
 var app = builder.Build();
-
 
 
 // Configure the HTTP request pipeline.

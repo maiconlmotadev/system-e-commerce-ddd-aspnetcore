@@ -18,26 +18,26 @@ namespace Entities.Entities
         public int Id { get; set; }
 
         [Column("PRO_NAME")]
-        [Display(Name = "NAME")]
+        [Display(Name = "Name")]
         [MaxLength(255)]
         public string Name { get; set; }
 
         [Column("PRD_DESCRIPTION")]
-        [Display(Name = "DESCRIPTION")]
+        [Display(Name = "Description")]
         [MaxLength(150)]
         public string Description { get; set; }
 
         [Column("PRD_OBSERVATION")]
-        [Display(Name = "OBSERVATION")]
+        [Display(Name = "Observation")]
         [MaxLength(20000)]
         public string Observation { get; set; }
 
         [Column("PRO_PRICE")]
-        [Display(Name = "PRICE")]
+        [Display(Name = "Price")]
         public decimal Price { get; set; }
 
         [Column("PRD_STOCK_QUANTITY")]
-        [Display(Name = "STOCK QUANTITY")]
+        [Display(Name = "Stock Quantity")]
         public int StockQuantity { get; set; }
 
         [Display(Name = "USER")]
@@ -47,15 +47,15 @@ namespace Entities.Entities
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Column("PRO_STATE")]
-        [Display(Name = "STATE")]
+        [Display(Name = "State")]
         public bool State { get; set; }
 
         [Column("PRD_REGISTRATION_DATE")]
-        [Display(Name = "REGISTRATION DATE")]
+        [Display(Name = "Registration Date")]
         public DateTime RegistrationDate { get; set; }
 
         [Column("PRD_CHANGE_DATE")]
-        [Display(Name = "CHANGE DATE")]
+        [Display(Name = "Change Date")]
         public DateTime ChangeDate { get; set; }
 
     }

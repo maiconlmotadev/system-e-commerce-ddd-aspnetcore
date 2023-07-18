@@ -10,41 +10,6 @@ namespace Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ApplicationUser",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    USR_NIF = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    USR_AGE = table.Column<int>(type: "int", nullable: false),
-                    USR_NAME = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    USR_CPOST = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    USR_ADDRESS = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    USR_ADDRESS_COMPLEMENT = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
-                    USR_CELL_PHONE = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    USR_TELEPHONE = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    USR_STATE = table.Column<bool>(type: "bit", nullable: false),
-                    USR_TYPE = table.Column<int>(type: "int", nullable: true),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NormalizedEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
-                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ApplicationUser", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -63,6 +28,16 @@ namespace Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    USR_NIF = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    USR_AGE = table.Column<int>(type: "int", nullable: false),
+                    USR_NAME = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    USR_CPOST = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
+                    USR_ADDRESS = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    USR_ADDRESS_COMPLEMENT = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    USR_CELL_PHONE = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    USR_TELEPHONE = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    USR_STATE = table.Column<bool>(type: "bit", nullable: false),
+                    USR_TYPE = table.Column<int>(type: "int", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -81,33 +56,6 @@ namespace Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TB_PRODUCT",
-                columns: table => new
-                {
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    PRO_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PRO_NAME = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    PRD_DESCRIPTION = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    PRD_OBSERVATION = table.Column<string>(type: "nvarchar(max)", maxLength: 20000, nullable: false),
-                    PRO_PRICE = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    PRD_STOCK_QUANTITY = table.Column<int>(type: "int", nullable: false),
-                    PRO_STATE = table.Column<bool>(type: "bit", nullable: false),
-                    PRD_REGISTRATION_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PRD_CHANGE_DATE = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TB_PRODUCT", x => x.PRO_ID);
-                    table.ForeignKey(
-                        name: "FK_TB_PRODUCT_ApplicationUser_UserId",
-                        column: x => x.UserId,
-                        principalTable: "ApplicationUser",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -217,6 +165,33 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TB_PRODUCT",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    PRO_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PRO_NAME = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    PRD_DESCRIPTION = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    PRD_OBSERVATION = table.Column<string>(type: "nvarchar(max)", maxLength: 20000, nullable: false),
+                    PRO_PRICE = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    PRD_STOCK_QUANTITY = table.Column<int>(type: "int", nullable: false),
+                    PRO_STATE = table.Column<bool>(type: "bit", nullable: false),
+                    PRD_REGISTRATION_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PRD_CHANGE_DATE = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_PRODUCT", x => x.PRO_ID);
+                    table.ForeignKey(
+                        name: "FK_TB_PRODUCT_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TB_USER_BUY",
                 columns: table => new
                 {
@@ -232,9 +207,9 @@ namespace Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_TB_USER_BUY", x => x.CUS_ID);
                     table.ForeignKey(
-                        name: "FK_TB_USER_BUY_ApplicationUser_UserId",
+                        name: "FK_TB_USER_BUY_AspNetUsers_UserId",
                         column: x => x.UserId,
-                        principalTable: "ApplicationUser",
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -324,13 +299,10 @@ namespace Infrastructure.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
                 name: "TB_PRODUCT");
 
             migrationBuilder.DropTable(
-                name: "ApplicationUser");
+                name: "AspNetUsers");
         }
     }
 }

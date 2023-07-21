@@ -12,17 +12,20 @@ namespace Web_ECommerce.Controllers
 
     public class ProductsController : Controller
     {
+        public readonly UserManager<ApplicationUser> _userManager;
         public readonly IProductApp _IProductApp;
 
-        public ProductsController(IProductApp IProductApp)
+        public ProductsController(IProductApp IProductApp, UserManager<ApplicationUser> userManager)
         {
             _IProductApp = IProductApp;
+            _userManager = userManager;
         }
 
         // GET: ProductsController
         public async Task<IActionResult> Index()
         {
-            return View(await _IProductApp.List());
+            var userId = await ReturnLoggedUserId();
+            return View(await _IProductApp.ListUserPoduct(userId));
         }
 
         // GET: ProductsController/Details/5
@@ -44,6 +47,9 @@ namespace Web_ECommerce.Controllers
         {
             try
             {
+                var userId = await ReturnLoggedUserId();
+                product.UserId = userId;
+
                 await _IProductApp.AddProduct(product);
                 if (product.Notifications.Any())
                 {
@@ -51,12 +57,12 @@ namespace Web_ECommerce.Controllers
                     {
                         ModelState.AddModelError(item.NameProp, item.mensage);
                     }
-                    return View("Edit", product);
+                    return View("Create", product);
                 }
             }
             catch
             {
-                return View("Edit", product); // not to be empty
+                return View("Create", product); // not to be empty
             }
             return RedirectToAction(nameof(Index));
         }
@@ -114,5 +120,12 @@ namespace Web_ECommerce.Controllers
                 return View();
             }
         }
+
+        private async Task<string> ReturnLoggedUserId()
+        {
+            var userId = await _userManager.GetUserAsync(User);
+            return userId.Id;
+        }
+
     }
 }

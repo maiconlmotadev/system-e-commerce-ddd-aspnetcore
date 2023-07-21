@@ -20,10 +20,13 @@ namespace Domain.Services
         public async Task AddProduct(Product product)
         {
             var validateName = product.ValidateStringProperty(product.Name, "Name");
-            var validateValue = product.ValidateDecimalProperty(product.Price, "Price");
-            
-            if (validateName && validateValue)
+            var validatePrice = product.ValidateDecimalProperty(product.Price, "Price");
+            var validateStockQuantity = product.ValidateIntProperty(product.StockQuantity, "StockQuantity");
+
+            if (validateName && validatePrice && validateStockQuantity)
             {
+                product.RegistrationDate= DateTime.Now;
+                product.ChangeDate= DateTime.Now;
                 product.State = true;
                 await _IProduct.Add(product);
             }
@@ -32,10 +35,12 @@ namespace Domain.Services
         public async Task UpdateProduct(Product product)
         {
             var validateName = product.ValidateStringProperty(product.Name, "Name");
-            var validateValue = product.ValidateDecimalProperty(product.Price, "Price");
+            var validatePrice = product.ValidateDecimalProperty(product.Price, "Price");
+            var validateStockQuantity = product.ValidateIntProperty(product.StockQuantity, "StockQuantity");
 
-            if (validateName && validateValue)
+            if (validateName && validatePrice && validateStockQuantity)
             {
+                product.ChangeDate = DateTime.Now;
                 await _IProduct.Update(product);
             }
         }

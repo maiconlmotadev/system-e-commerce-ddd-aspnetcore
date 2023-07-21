@@ -13,6 +13,18 @@ namespace Infrastructure.Repository.Repositories
 {
     public class RepositoryProduct : RepositoryGenerics<Product>, IProduct
     {
-       
+        private readonly DbContextOptions<ContextBase> _optionsBuilder;
+        public RepositoryProduct()
+        {
+            _optionsBuilder = new DbContextOptions<ContextBase>();
+        }
+
+        public async Task<List<Product>> ListUserProduct(string userId)
+        {
+            using (var banco = new ContextBase(_optionsBuilder))
+            {
+                return await banco.Product.Where(p => p.UserId == userId).AsNoTracking().ToListAsync();
+            }
+        }
     }
 }

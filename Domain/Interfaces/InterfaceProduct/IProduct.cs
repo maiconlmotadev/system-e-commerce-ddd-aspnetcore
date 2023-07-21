@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace Domain.Interfaces.InterfaceProduct
 {
     public interface IProduct : IGeneric<Product>
-    {
+    { 
+        Task<List<Product>> ListUserProduct(string userId);
     }
 }

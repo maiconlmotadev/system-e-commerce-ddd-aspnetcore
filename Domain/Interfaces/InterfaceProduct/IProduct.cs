@@ -3,6 +3,7 @@ using Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,8 @@ namespace Domain.Interfaces.InterfaceProduct
 {
     public interface IProduct : IGeneric<Product>
     { 
-        Task<List<Product>> ListUserProduct(string userId);
+        Task<List<Product>> ListUserProducts(string userId);
+
+        Task<List<Product>> ListProducts(Expression<Func<Product, bool>> exProduct);
     }
 }

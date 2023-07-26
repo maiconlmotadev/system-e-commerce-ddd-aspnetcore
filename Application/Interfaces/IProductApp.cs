@@ -12,5 +12,6 @@ namespace ApplicationApp.Interfaces
         Task UpdateProduct(Product product);
 
         Task <List<Product>> ListUserPoduct(string userId);
+        Task<List<Product>> ListProductsWithStock();
     }
 }

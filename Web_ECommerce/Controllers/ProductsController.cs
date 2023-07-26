@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 
 namespace Web_ECommerce.Controllers
 {
@@ -125,6 +126,19 @@ namespace Web_ECommerce.Controllers
         {
             var userId = await _userManager.GetUserAsync(User);
             return userId.Id;
+        }
+
+        [AllowAnonymous]
+        [HttpGet("/api/ListProductsWithStock")]
+        public async Task<JsonResult> ListProductsWithStock()
+        {
+            return Json(await _IProductApp.ListProductsWithStock());
+        }
+
+        [HttpPost("/api/ListProductsWithStock")]
+        public async Task AddProductCart(string id, string nome, string quant)
+        {
+            // preparação para próxima aula...
         }
 
     }

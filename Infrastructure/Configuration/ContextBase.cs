@@ -32,7 +32,7 @@ namespace Infrastructure.Configuration
 
         private string GetStringConectionConfig()
         {
-            string ConStr = "Data Source=MAC-WIN\\SQLSERVER2022; Initial Catalog=dbecommerceddd; User ID=sa; Password=0000;";
+            string ConStr = "Data Source=WINMACBOOK\\SQLEXPRESS; Initial Catalog=dbecommerceddd; User ID=sa; Password=0000;";
             return ConStr;
         }
     }

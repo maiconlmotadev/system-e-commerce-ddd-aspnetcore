@@ -15,6 +15,7 @@ namespace Infrastructure.Repository.Repositories
     public class RepositoryProduct : RepositoryGenerics<Product>, IProduct
     {
         private readonly DbContextOptions<ContextBase> _optionsBuilder;
+
         public RepositoryProduct()
         {
             _optionsBuilder = new DbContextOptions<ContextBase>();

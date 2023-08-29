@@ -135,8 +135,8 @@ namespace Web_ECommerce.Controllers
             return Json(await _IProductApp.ListProductsWithStock());
         }
 
-        [HttpPost("/api/ListProductsWithStock")]
-        public async Task AddProductCart(string id, string nome, string quant)
+        [HttpPost("/api/AddProductCart")]
+        public async Task AddProductCart(string id, string name, string quant)
         {
             // preparação para próxima aula...
         }

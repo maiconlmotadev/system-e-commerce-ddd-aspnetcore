@@ -22,7 +22,7 @@ namespace Entities.Entities
         [ForeignKey("TB_PRODUCT")]
         //[Column(Order = 1)]
         public int IdProduct { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual Product? Product { get; set; }
 
         [Column("CUS_STATE")]
         [Display(Name = "State")]
@@ -35,7 +35,7 @@ namespace Entities.Entities
         [Display(Name = "User")]
         [ForeignKey("ApplicationUser")]
         //[Column(Order = 1)]
-        public string UserId { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        public string? UserId { get; set; }
+        public virtual ApplicationUser? ApplicationUser { get; set; }
     }
 }

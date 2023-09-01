@@ -8,12 +8,12 @@ namespace Entities.Entities.Enums
 {
     public enum EnumBuyState
     {
-        Produto_Carrinho = 1,
-        Produto_Comprado = 2,
-        Produto_Em_preparação = 3,
-        Produto_Caminho = 4,
-        Produto_Entregue = 5,
-        Produto_Recebido = 6,
-        Produto_Cancelado = 7
+        Product_Cart = 1,
+        Product_Purchased = 2,
+        Product_In_preparation = 3,
+        Product_Path = 4,
+        Product_Delivered = 5,
+        Product_Received = 6,
+        Product_Cancelled = 7
     }
 }

@@ -148,19 +148,16 @@ namespace Infrastructure.Migrations
                         .HasColumnName("PRD_CHANGE_DATE");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)")
                         .HasColumnName("PRD_DESCRIPTION");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("PRO_NAME");
 
                     b.Property<string>("Observation")
-                        .IsRequired()
                         .HasMaxLength(20000)
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("PRD_OBSERVATION");
@@ -182,7 +179,6 @@ namespace Infrastructure.Migrations
                         .HasColumnName("PRD_STOCK_QUANTITY");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)")
                         .HasColumnOrder(1);
 
@@ -209,7 +205,7 @@ namespace Infrastructure.Migrations
                     b.Property<int>("IdProduct")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductId")
+                    b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("State")
@@ -217,7 +213,6 @@ namespace Infrastructure.Migrations
                         .HasColumnName("CUS_STATE");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -370,9 +365,7 @@ namespace Infrastructure.Migrations
                 {
                     b.HasOne("Entities.Entities.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("ApplicationUser");
                 });
@@ -381,15 +374,11 @@ namespace Infrastructure.Migrations
                 {
                     b.HasOne("Entities.Entities.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProductId");
 
                     b.HasOne("Entities.Entities.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("ApplicationUser");
 

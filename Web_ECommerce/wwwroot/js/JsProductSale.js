@@ -15,8 +15,16 @@ ObjectSale.AddCart = function (idProduct) {
         data: {
             "id": idProduct, "name": name, "quant": quant
         },
-        success: function (data) {  
+        success: function (data) {
 
+            //alert("success");
+
+            if (data.success) {
+                alert("Ok");
+            }     
+            else {
+                alert("User not lagged in");
+            }
         }
     });
 }

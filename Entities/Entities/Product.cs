@@ -20,17 +20,17 @@ namespace Entities.Entities
         [Column("PRO_NAME")]
         [Display(Name = "Name")]
         [MaxLength(255)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Column("PRD_DESCRIPTION")]
         [Display(Name = "Description")]
         [MaxLength(150)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [Column("PRD_OBSERVATION")]
         [Display(Name = "Observation")]
         [MaxLength(20000)]
-        public string Observation { get; set; }
+        public string? Observation { get; set; }
 
         [Column("PRO_PRICE")]
         [Display(Name = "Price")]
@@ -43,8 +43,8 @@ namespace Entities.Entities
         [Display(Name = "USER")]
         [ForeignKey("ApplicationUser")]
         [Column(Order = 1)]
-        public string UserId { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        public string? UserId { get; set; }
+        public virtual ApplicationUser? ApplicationUser { get; set; }
 
         [Column("PRO_STATE")]
         [Display(Name = "State")]

@@ -168,12 +168,12 @@ namespace Infrastructure.Migrations
                 name: "TB_PRODUCT",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     PRO_ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PRO_NAME = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    PRD_DESCRIPTION = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    PRD_OBSERVATION = table.Column<string>(type: "nvarchar(max)", maxLength: 20000, nullable: false),
+                    PRO_NAME = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    PRD_DESCRIPTION = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
+                    PRD_OBSERVATION = table.Column<string>(type: "nvarchar(max)", maxLength: 20000, nullable: true),
                     PRO_PRICE = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     PRD_STOCK_QUANTITY = table.Column<int>(type: "int", nullable: false),
                     PRO_STATE = table.Column<bool>(type: "bit", nullable: false),
@@ -187,8 +187,7 @@ namespace Infrastructure.Migrations
                         name: "FK_TB_PRODUCT_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -198,10 +197,10 @@ namespace Infrastructure.Migrations
                     CUS_ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IdProduct = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: true),
                     CUS_STATE = table.Column<int>(type: "int", nullable: false),
                     CSU_QTY = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -210,14 +209,12 @@ namespace Infrastructure.Migrations
                         name: "FK_TB_USER_BUY_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_TB_USER_BUY_TB_PRODUCT_ProductId",
                         column: x => x.ProductId,
                         principalTable: "TB_PRODUCT",
-                        principalColumn: "PRO_ID",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "PRO_ID");
                 });
 
             migrationBuilder.CreateIndex(

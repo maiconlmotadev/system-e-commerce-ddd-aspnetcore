@@ -5,7 +5,7 @@ Technologies used in the project:
 
 * DDD (Domain Driven Design)
 
-* Arquitetura MVC 
+* MVC architecture 
 
 * Microsoft Identity: User Management
 

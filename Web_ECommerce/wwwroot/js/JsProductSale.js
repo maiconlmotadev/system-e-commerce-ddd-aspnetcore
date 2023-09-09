@@ -20,10 +20,12 @@ ObjectSale.AddCart = function (idProduct) {
             //alert("success");
 
             if (data.success) {
-                alert("Ok");
+                // 1 alert-success// 2 alert-warning// 3 alert-danger
+                AlertObject.ViewAlert(1, "Product added to cart!");
             }     
             else {
-                alert("User not lagged in");
+                // 1 alert-success// 2 alert-warning// 3 alert-danger
+                AlertObject.ViewAlert(2, "Login required!");
             }
         }
     });

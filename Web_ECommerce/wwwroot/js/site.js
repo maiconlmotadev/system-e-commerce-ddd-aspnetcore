@@ -7,7 +7,8 @@
 var AlertObject = new Object();
 
 AlertObject.ViewAlert = function (type, message) {
-    $("JavaScriptAlert").html("");
+
+    $("#JavaScriptAlert").html("");
 
     // tipo
     // 1 alert-success
@@ -25,6 +26,16 @@ AlertObject.ViewAlert = function (type, message) {
     }
 
     var AlertDiv = $("<div>", { class: AlertClassType });
+    AlertDiv.append('<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>');
+    AlertDiv.append('<strong>' + message + '</strong>');
 
+    $("#JavaScriptAlert").html(AlertDiv);
+
+    // to disappear the alert popup
+    window.setTimeout(function () {
+        $(".alert").fadeTo(1500, 0).slideUp(500, function () {
+            $(this).remove();
+        });
+    }, 5000);
 }
 

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.VisualBasic;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 
@@ -88,6 +89,10 @@ namespace Web_ECommerce.Controllers
                     {
                         ModelState.AddModelError(item.NameProp, item.mensage);
                     }
+
+                    ViewBag.Alert = true;
+                    ViewBag.Message = "Verify, Error! Unable to verify product!";
+
                     return View("Edit", product);
                 }
             }

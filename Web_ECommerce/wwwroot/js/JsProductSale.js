@@ -65,6 +65,13 @@ ObjectSale.LoadProducts = function () {
     });
 }
 
+ObjectSale.LoadQuantCart = function () {
+    $("#quantCart").text("(0)");
+
+    setTimeout(ObjectSale.LoadQuantCart, 10000);
+}
+
 $(function () {
     ObjectSale.LoadProducts();
+    ObjectSale.LoadQuantCart();
 }); 

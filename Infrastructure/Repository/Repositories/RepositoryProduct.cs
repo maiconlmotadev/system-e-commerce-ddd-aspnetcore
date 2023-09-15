@@ -1,5 +1,6 @@
 ﻿using Domain.Interfaces.InterfaceProduct;
 using Entities.Entities;
+using Entities.Entities.Enums;
 using Infrastructure.Configuration;
 using Infrastructure.Repository.Generics;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +29,51 @@ namespace Infrastructure.Repository.Repositories
                 return await banco.Product.Where(exProduct).AsNoTracking().ToListAsync();
             }
         }
+
+        public async Task<List<Product>> ListProductsUserCart(string userId)
+        {
+            using (var bank = new ContextBase(_optionsBuilder))
+            {
+                var productsUserCart = await (from p in bank.Product
+                                              join c in bank.UserBuy on p.Id equals c.IdProduct
+                                              where c.UserId.Equals(userId) && c.State == EnumBuyState.Product_Cart
+                                              select new Product
+                                              {
+                                                Id = p.Id,
+                                                Name = p.Name,
+                                                Description = p.Description,
+                                                Observation = p.Observation,
+                                                Price = p.Price,
+                                                BuyQuant = c.BuyQuantity, 
+                                                idCartProduct = c.Id
+
+                                              }).AsNoTracking().ToListAsync();
+                return productsUserCart;
+            }
+        }
+
+        public async Task<Product> GetProductsUserCart(int idCartProduct)
+        {
+            using (var bank = new ContextBase(_optionsBuilder))
+            {
+                var productsUserCart = await (from p in bank.Product
+                                              join c in bank.UserBuy on p.Id equals c.IdProduct
+                                              where c.Id.Equals(idCartProduct) && c.State == EnumBuyState.Product_Cart
+                                              select new Product
+                                              {
+                                                  Id = p.Id,
+                                                  Name = p.Name,
+                                                  Description = p.Description,
+                                                  Observation = p.Observation,
+                                                  Price = p.Price,
+                                                  BuyQuant = c.BuyQuantity,
+                                                  IdCartProduct = c.Id
+                                              }).AsNoTracking().FirstOrDefaultAsync();
+
+                return productsUserCart;
+            }
+        }
+
 
         public async Task<List<Product>> ListUserProducts(string userId)
         {

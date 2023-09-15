@@ -1,5 +1,6 @@
 ﻿using Domain.Interfaces.UserBuyInterface;
 using Entities.Entities;
+using Entities.Entities.Enums;
 using Infrastructure.Configuration;
 using Infrastructure.Repository.Generics;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +25,7 @@ namespace Infrastructure.Repository.Repositories
         {
             using (var bank = new ContextBase(_optionsbuilder))
             {
-                return await bank.UserBuy.CountAsync(c => c.UserId.Equals(userId));
+                return await bank.UserBuy.CountAsync(c => c.UserId.Equals(userId) && c.State == EnumBuyState.Product_Cart);
             }
         }
     }

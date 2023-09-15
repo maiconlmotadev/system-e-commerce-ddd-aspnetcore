@@ -13,5 +13,9 @@ namespace ApplicationApp.Interfaces
 
         Task<List<Product>> ListUserPoduct(string userId);
         Task<List<Product>> ListProductsWithStock();
+
+        Task<List<Product>> ListProductsUserCart(string userId);
+
+        Task<Product> GetProductsUserCart(int idCartProduct);
     }
 }

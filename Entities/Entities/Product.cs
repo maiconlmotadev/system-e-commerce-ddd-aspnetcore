@@ -58,5 +58,11 @@ namespace Entities.Entities
         [Display(Name = "Change Date")]
         public DateTime ChangeDate { get; set; }
 
+        [NotMapped]
+        public int IdCartProduct { get; set; }
+
+        [NotMapped]
+        public int BuyQuant { get; set; }
+
     }
 }

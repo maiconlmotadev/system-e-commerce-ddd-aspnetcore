@@ -9,6 +9,7 @@ namespace ApplicationApp.Interfaces
 {
     public interface IUserBuyApp : IGenericApp<UserBuy>
     {
+        public Task<int> QuantProductUserCart(string userId);
     }
 }
      

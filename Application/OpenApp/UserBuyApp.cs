@@ -18,6 +18,11 @@ namespace ApplicationApp.OpenApp
             _IUserBuy = IUserBuy;
         }
 
+        public async Task<int> QuantProductUserCart(string userId)
+        {
+            return await _IUserBuy.quantProductUserCart(userId);
+        }
+
         public async Task Add(UserBuy Object)
         {
             await _IUserBuy.Add(Object);

@@ -36,5 +36,20 @@ namespace Web_ECommerce.Controllers
 
             return Json(new { success = false });
         }
+
+        [HttpGet("/api/QuantProductsCart")]
+        public async Task<JsonResult> QuantProductsCart()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var quant = 0;
+
+            if (user != null)
+            {
+               quant = await _IUserBuyApp.QuantProductUserCart(user.Id);
+
+               return Json(new { success = true, quant = quant });
+            }
+            return Json(new { success = false, quant = quant });
+        }
     }
 }

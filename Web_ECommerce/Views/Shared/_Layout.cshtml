@@ -29,7 +29,9 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">My products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" >My cart <span id="quantCart"></span></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">
+                                <img src="~/img/cart.png" width="20" height="20" /> <span id="quantCart"></span>
+                            </a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

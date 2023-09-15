@@ -10,5 +10,6 @@ namespace Domain.Interfaces.UserBuyInterface
 {
     public interface IUserBuy : IGeneric<UserBuy>
     {
+        public Task<int> quantProductUserCart(string userId);
     }
 }

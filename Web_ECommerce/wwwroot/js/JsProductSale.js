@@ -68,7 +68,23 @@ ObjectSale.LoadProducts = function () {
 ObjectSale.LoadQuantCart = function () {
     $("#quantCart").text("(0)");
 
-    setTimeout(ObjectSale.LoadQuantCart, 10000);
+    $.ajax({
+        type: "GET",
+        url: "/api/QuantProductsCart",
+        dataType: "JSON",
+        cache: false,
+        async: true,
+        success: function (data) {
+
+            if (data.success) {
+                $("#quantCart").text("(" + data.quant + ")");
+            }
+
+        }
+
+    });
+
+    setTimeout(ObjectSale.LoadQuantCart, 10000); 
 }
 
 $(function () {

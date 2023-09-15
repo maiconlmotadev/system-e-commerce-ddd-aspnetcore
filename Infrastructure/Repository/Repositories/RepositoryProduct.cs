@@ -45,7 +45,7 @@ namespace Infrastructure.Repository.Repositories
                                                 Observation = p.Observation,
                                                 Price = p.Price,
                                                 BuyQuant = c.BuyQuantity, 
-                                                idCartProduct = c.Id
+                                                IdCartProduct = c.Id
 
                                               }).AsNoTracking().ToListAsync();
                 return productsUserCart;

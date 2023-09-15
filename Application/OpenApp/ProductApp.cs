@@ -26,7 +26,7 @@ namespace ApplicationApp.OpenApp
             return await _IProduct.ListProductsUserCart(userId);
         }
 
-        public async Task<Product> GetProductsUserCart(int idCartProduct)
+        public async Task<Product> GetProductsCart(int idCartProduct)
         {
             return await _IProduct.GetProductsUserCart(idCartProduct);
         }

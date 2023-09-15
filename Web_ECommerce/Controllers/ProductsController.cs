@@ -16,11 +16,13 @@ namespace Web_ECommerce.Controllers
     {
         public readonly UserManager<ApplicationUser> _userManager;
         public readonly IProductApp _IProductApp;
+        public readonly IUserBuyApp _IUserBuyApp;
 
-        public ProductsController(IProductApp IProductApp, UserManager<ApplicationUser> userManager)
+        public ProductsController(IProductApp IProductApp, UserManager<ApplicationUser> userManager, IUserBuyApp iUserBuyApp)
         {
             _IProductApp = IProductApp;
             _userManager = userManager;
+            _IUserBuyApp = iUserBuyApp;
         }
 
         // GET: ProductsController
@@ -140,7 +142,38 @@ namespace Web_ECommerce.Controllers
             return Json(await _IProductApp.ListProductsWithStock());
         }
 
-        
+        public async Task<IActionResult> ListProductsUserCart()
+        {
+            var userId = await ReturnLoggedUserId();
+            return View( await _IProductApp.ListProductsUserCart(userId));
+        }
+
+
+
+
+        // GET: ProductsController/Delete/5
+        public async Task<IActionResult> RemoveCart(int id)
+        {
+            return View(await _IProductApp.GetProductsCart(id));
+        }
+
+        // POST: ProductsController/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RemoveCart(int id, Product product)
+        {
+            try
+            {
+                var productDelete = await _IUserBuyApp.GetEntityById(id);
+                await _IUserBuyApp.Delete(productDelete);
+
+                return RedirectToAction(nameof(ListProductsUserCart));
+            }
+            catch
+            {
+                return View();
+            }
+        }
 
     }
 }

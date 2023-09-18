@@ -135,6 +135,8 @@ namespace Web_ECommerce.Controllers
             return userId.Id;
         }
 
+
+
         [AllowAnonymous]
         [HttpGet("/api/ListProductsWithStock")]
         public async Task<JsonResult> ListProductsWithStock()
@@ -147,7 +149,6 @@ namespace Web_ECommerce.Controllers
             var userId = await ReturnLoggedUserId();
             return View( await _IProductApp.ListProductsUserCart(userId));
         }
-
 
 
 

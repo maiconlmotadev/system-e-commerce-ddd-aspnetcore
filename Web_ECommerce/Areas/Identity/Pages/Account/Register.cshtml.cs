@@ -80,6 +80,42 @@ namespace Web_ECommerce.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
 
+
+            [Required]
+            [MaxLength(50)]
+            [Display(Name = "Nif")]
+            public string Nif { get; set; }
+
+            [Display(Name = "Age")]
+            public int Age { get; set; }
+
+            [Required]
+            [MaxLength(255)]
+            [Display(Name = "Name")]
+            public string Name { get; set; }
+
+            [Required]
+            [MaxLength(15)]
+            [Display(Name = "CPost")]
+            public string CPost { get; set; }
+
+            [Required]
+            [MaxLength(255)]
+            [Display(Name = "Address")]
+            public string Address { get; set; }
+
+            [MaxLength(450)]
+            [Display(Name = "Address Complement")]
+            public string AddressComplement { get; set; }
+
+            [MaxLength(20)]
+            [Display(Name = "Cell Phone")]
+            public string CellPhone { get; set; }
+
+            [MaxLength(20)]
+            [Display(Name = "Telephone")]
+            public string Telephone { get; set; } 
+
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.

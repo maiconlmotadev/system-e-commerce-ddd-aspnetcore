@@ -9,6 +9,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+        <br>
         <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-floating">
@@ -16,6 +17,7 @@
                 <label asp-for="Input.Email" class="form-label"></label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
+            <br>
             <button type="submit" class="w-100 btn btn-lg btn-primary">Resend</button>
         </form>
     </div>

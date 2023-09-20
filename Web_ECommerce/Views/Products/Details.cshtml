@@ -1,13 +1,12 @@
 ﻿@model Entities.Entities.Product
 
 @{
-    ViewData["Title"] = "Details";
+
 }
 
-<h1>Details</h1>
 
 <div>
-    <h4>Product</h4>
+    <h4>Product details</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -69,5 +68,5 @@
 </div>
 <div>
     @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to product List</a>
 </div>

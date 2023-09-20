@@ -44,7 +44,7 @@ ObjectSale.LoadProducts = function () {
 
             data.forEach(function (Entitie) {
 
-                htmlContent += "<div class='col-xs-12 col-sm-4 col-md-4 col-lg-4' >"
+                htmlContent += "<br><br><div class='col-xs-12 col-sm-4 col-md-4 col-lg-4' ><br><br>"
 
                 var idName = "name_" + Entitie.id;
                 var idQuant = "quant_" + Entitie.id;

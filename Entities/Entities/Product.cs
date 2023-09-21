@@ -1,4 +1,5 @@
 ﻿using Entities.Notifications;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -63,6 +64,13 @@ namespace Entities.Entities
 
         [NotMapped]
         public int BuyQuant { get; set; }
+
+
+        [NotMapped]
+        public IFormFile Image { get; set; }
+
+        [Column("PRD_URL")]
+        public string Url { get; set; } 
 
     }
 }

@@ -9,7 +9,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <input asp-for="Id" type="hidden" />
@@ -50,6 +50,15 @@
                     <input class="form-check-input" asp-for="State" /> @Html.DisplayNameFor(model => model.State)
                 </label>
             </div>
+            <br>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <p>Select your Image with a maximum size of 600X600</p>
+                    <input type="file" name="Image" asp-for="Image" multiple />
+                </div>
+            </div>
+
             <br>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

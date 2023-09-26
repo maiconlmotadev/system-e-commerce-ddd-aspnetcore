@@ -50,7 +50,13 @@ ObjectSale.LoadProducts = function () {
                 var idQuant = "quant_" + Entitie.id;
 
                 htmlContent += "<label id='" + idName + "' > Product: " + Entitie.name + "</label></br>";
-                htmlContent += "<label > Price: " + Entitie.price + "</label></br>";
+                
+                if (Entitie.url != null && Entitie.url != "" && Entitie.url != undefined) {
+
+                    htmlContent += "<img width='200' height='100' src='" + Entitie.url + "'/></br>";
+                }
+
+                htmlContent += "</br><label > Price: " + Entitie.price + "</label></br>";
 
                 htmlContent += "Quantity : <input type'number' value='1' id='" + idQuant + "'>";
 

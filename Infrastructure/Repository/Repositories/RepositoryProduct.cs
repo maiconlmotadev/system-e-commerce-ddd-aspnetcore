@@ -45,7 +45,8 @@ namespace Infrastructure.Repository.Repositories
                                                 Observation = p.Observation,
                                                 Price = p.Price,
                                                 BuyQuant = c.BuyQuantity, 
-                                                IdCartProduct = c.Id
+                                                IdCartProduct = c.Id,
+                                                Url = p.Url,
 
                                               }).AsNoTracking().ToListAsync();
                 return productsUserCart;
@@ -67,7 +68,8 @@ namespace Infrastructure.Repository.Repositories
                                                   Observation = p.Observation,
                                                   Price = p.Price,
                                                   BuyQuant = c.BuyQuantity,
-                                                  IdCartProduct = c.Id
+                                                  IdCartProduct = c.Id,
+                                                  Url = p.Url,
                                               }).AsNoTracking().FirstOrDefaultAsync();
 
                 return productsUserCart;
@@ -77,9 +79,9 @@ namespace Infrastructure.Repository.Repositories
 
         public async Task<List<Product>> ListUserProducts(string userId)
         {
-            using (var banco = new ContextBase(_optionsBuilder))
+            using (var bank = new ContextBase(_optionsBuilder))
             {
-                return await banco.Product.Where(p => p.UserId == userId).AsNoTracking().ToListAsync();
+                return await bank.Product.Where(p => p.UserId == userId).AsNoTracking().ToListAsync();
             }
         }
     }

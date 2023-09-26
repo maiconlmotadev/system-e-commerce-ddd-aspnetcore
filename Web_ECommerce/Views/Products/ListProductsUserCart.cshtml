@@ -9,10 +9,13 @@
 <table class="table">
     <thead>
         <tr>
-            
+
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
+
+            <th>Image</th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
@@ -21,40 +24,51 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
-            </th>         
-           
+            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.BuyQuant)
             </th>
-            
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>           
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.BuyQuant)
-            </td>
-            
-            <td>
-                @Html.ActionLink("Remove", "RemoveCart", new { id=item.IdCartProduct })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+                <td>
+                    @{
+                        if (!string.IsNullOrWhiteSpace(item.Url))
+                        {
+                            <img width="80" height="80" src=@item.Url />
+                        }
+                    }
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuyQuant)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Remove", "RemoveCart", new { id=item.IdCartProduct })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

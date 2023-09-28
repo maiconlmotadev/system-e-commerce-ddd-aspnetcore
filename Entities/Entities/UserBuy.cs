@@ -37,5 +37,24 @@ namespace Entities.Entities
         //[Column(Order = 1)]
         public string? UserId { get; set; }
         public virtual ApplicationUser? ApplicationUser { get; set; }
+
+
+        // Apenas para exibir alguns dados na tela
+        [NotMapped]
+        [Display(Name = "Total Quantity")]
+        public int ProductsQuantity { get; set; }
+
+        [NotMapped]
+        [Display(Name = "Total Price")]
+        public decimal TotalPrice { get; set; }
+
+
+        [NotMapped]
+        [Display(Name = "Delivery Address")]
+        public string DeliveryAddress { get; set; }
+
+        [NotMapped]
+        public List<Product> ProductsList { get; set;}
+
     }
 }

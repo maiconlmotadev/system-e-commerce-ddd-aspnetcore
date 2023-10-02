@@ -1,4 +1,5 @@
 ﻿using ApplicationApp.Interfaces;
+using Domain.Interfaces.InterfaceServices;
 using Domain.Interfaces.UserBuyInterface;
 using Entities.Entities;
 using System;
@@ -13,10 +14,33 @@ namespace ApplicationApp.OpenApp
     {
 
         private readonly IUserBuy _IUserBuy;
-        public UserBuyApp(IUserBuy IUserBuy)
+        private readonly IServiceUserBuy _IServiceUserBuy;
+
+        public UserBuyApp(IUserBuy IUserBuy, IServiceUserBuy IServiceUserBuy)
         {
             _IUserBuy = IUserBuy;
+            _IServiceUserBuy = IServiceUserBuy;
+
         }
+
+        public async Task<UserBuy> BuyCart(string userId)
+        {
+            return await _IServiceUserBuy.BuyCart(userId);
+        }
+
+        public async Task<UserBuy> BuyProducts(string userId)
+        {
+            return await _IServiceUserBuy.BuyProducts(userId);
+        }
+
+        public async Task<bool> ConfirmPurchaseCartUser(string userId)
+        {
+            return await _IUserBuy.ConfirmPurchaseUserCart(userId);
+        }
+
+
+
+
 
         public async Task<int> QuantProductUserCart(string userId)
         {
@@ -47,5 +71,9 @@ namespace ApplicationApp.OpenApp
         {
             await _IUserBuy.Update(Object);
         }
+
+
+
+       
     }
 }

@@ -40,6 +40,9 @@ builder.Services.AddSingleton<IUserBuyApp, UserBuyApp>();
 
 // DOMAIN SERVICE
 builder.Services.AddSingleton<IServiceProduct, ServiceProduct>();
+builder.Services.AddSingleton<IServiceUserBuy, ServiceUserBuy>();
+
+
 
 // 
 //builder.Services.AddSingleton<ApplicationUser>();

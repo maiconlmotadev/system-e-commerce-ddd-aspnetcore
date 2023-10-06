@@ -17,8 +17,43 @@ namespace Web_ECommerce.Controllers
         public UserBuyController(UserManager<ApplicationUser> userManager, IUserBuyApp IUserBuyApp)
         {
             _userManager = userManager;
-            _IUserBuyApp = userBuyApp;
+            _IUserBuyApp = IUserBuyApp;
         }
+
+        public async Task<IActionResult> FinalizeBuy()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var userBuy = await _IUserBuyApp.BuyCart(user.Id);
+            return View(userBuy);
+        }
+
+        public async Task<IActionResult> MyBuys(bool message = false)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var userBuy = await _IUserBuyApp.BuyProducts(user.Id);
+
+            if (message)
+            {
+                ViewBag.Success = true;
+                ViewBag.Message = "Purchase made! Pay now and guarantee your purchase!";
+            }
+            return View(userBuy);
+        }
+
+        public async Task<IActionResult> ConfirmBuy()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var success = await _IUserBuyApp.ConfirmPurchaseCartUser(user.Id);
+
+            if (success)
+            {
+                return RedirectToAction("MyBuys", new { Message = true });
+            }
+            else
+                return RedirectToAction("FinalizeBuy");
+
+        }
+
 
         [HttpPost("/api/AddProductCart")]
         public async Task<JsonResult> AddProductCart(string id, string name, string quant)

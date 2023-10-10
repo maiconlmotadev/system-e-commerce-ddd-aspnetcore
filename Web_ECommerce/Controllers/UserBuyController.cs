@@ -6,10 +6,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using System.Threading.Tasks;
+using Web_ECommerce.Models;
 
 namespace Web_ECommerce.Controllers
 {
-    public class UserBuyController : Controller
+    public class UserBuyController : HelpQrCode
     {
         public readonly UserManager<ApplicationUser> _userManager;
         public readonly IUserBuyApp _IUserBuyApp;

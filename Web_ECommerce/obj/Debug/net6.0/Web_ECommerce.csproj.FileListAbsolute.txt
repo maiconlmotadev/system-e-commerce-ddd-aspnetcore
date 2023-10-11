@@ -582,3 +582,8 @@ E:\SCHOOL\PROJECTS\DEV NET CORE Valdir Ferreira\system-e-commerce-ddd-aspnetcore
 E:\SCHOOL\PROJECTS\DEV NET CORE Valdir Ferreira\system-e-commerce-ddd-aspnetcore\Web_ECommerce\obj\Debug\net6.0\Web_ECommerce.pdb
 E:\SCHOOL\PROJECTS\DEV NET CORE Valdir Ferreira\system-e-commerce-ddd-aspnetcore\Web_ECommerce\obj\Debug\net6.0\Web_ECommerce.genruntimeconfig.cache
 E:\SCHOOL\PROJECTS\DEV NET CORE Valdir Ferreira\system-e-commerce-ddd-aspnetcore\Web_ECommerce\obj\Debug\net6.0\ref\Web_ECommerce.dll
+E:\SCHOOL\PROJECTS\DEV NET CORE Valdir Ferreira\system-e-commerce-ddd-aspnetcore\Web_ECommerce\bin\Debug\net6.0\PdfSharpCore.dll
+E:\SCHOOL\PROJECTS\DEV NET CORE Valdir Ferreira\system-e-commerce-ddd-aspnetcore\Web_ECommerce\bin\Debug\net6.0\QRCoder.dll
+E:\SCHOOL\PROJECTS\DEV NET CORE Valdir Ferreira\system-e-commerce-ddd-aspnetcore\Web_ECommerce\bin\Debug\net6.0\SixLabors.Fonts.dll
+E:\SCHOOL\PROJECTS\DEV NET CORE Valdir Ferreira\system-e-commerce-ddd-aspnetcore\Web_ECommerce\bin\Debug\net6.0\SixLabors.ImageSharp.dll
+E:\SCHOOL\PROJECTS\DEV NET CORE Valdir Ferreira\system-e-commerce-ddd-aspnetcore\Web_ECommerce\bin\Debug\net6.0\de\PdfSharpCore.resources.dll

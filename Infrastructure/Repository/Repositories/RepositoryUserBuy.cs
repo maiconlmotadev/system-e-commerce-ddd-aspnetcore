@@ -64,7 +64,7 @@ namespace Infrastructure.Repository.Repositories
 
                 var productsUserCart = await (from p in bank.Product
                                               join c in bank.UserBuy on p.Id equals c.IdProduct
-                                              where c.UserId.Equals(userId) && c.State == EnumBuyState.Product_Purchased
+                                              where c.UserId.Equals(userId) && c.State == state
                                               select new Product
                                               {
                                                   Id = p.Id,

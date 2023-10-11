@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using System.Threading.Tasks;
 using Web_ECommerce.Models;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Web_ECommerce.Controllers
 {
@@ -14,11 +15,14 @@ namespace Web_ECommerce.Controllers
     {
         public readonly UserManager<ApplicationUser> _userManager;
         public readonly IUserBuyApp _IUserBuyApp;
+        private IWebHostEnvironment _IWebHostEnvironment;
 
-        public UserBuyController(UserManager<ApplicationUser> userManager, IUserBuyApp IUserBuyApp)
+        public UserBuyController(UserManager<ApplicationUser> userManager, IUserBuyApp IUserBuyApp, IWebHostEnvironment IWebHostEnvironment)
         {
             _userManager = userManager;
             _IUserBuyApp = IUserBuyApp;
+            _IWebHostEnvironment = IWebHostEnvironment;
+
         }
 
         public async Task<IActionResult> FinalizeBuy()
@@ -53,6 +57,15 @@ namespace Web_ECommerce.Controllers
             else
                 return RedirectToAction("FinalizeBuy");
 
+        }
+
+        public async Task<IActionResult> Print()
+        {
+            var user = await _userManager.GetUserAsync(User);
+
+            var userBuy = await _IUserBuyApp.BuyProducts(user.Id);
+
+            return await Download(userBuy, _IWebHostEnvironment);
         }
 
 

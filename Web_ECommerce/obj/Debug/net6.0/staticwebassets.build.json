@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "W3xfzVVW6+7pudDcJSpGOv7OxFxbTR7RWU8MyPyGBxU=",
+  "Hash": "K4w9DRV7bHc+YP6aQckiNrRPxhw2hSjNhMgwye99shI=",
   "Source": "Web_ECommerce",
   "BasePath": "_content/Web_ECommerce",
   "Mode": "Default",
@@ -1122,6 +1122,57 @@
       "OriginalItemSpec": "wwwroot\\img\\cart.png"
     },
     {
+      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\img\\loja-virtual-1.png",
+      "SourceId": "Web_ECommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\",
+      "BasePath": "_content/Web_ECommerce",
+      "RelativePath": "img/loja-virtual-1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\loja-virtual-1.png"
+    },
+    {
+      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\img\\loja-virtual-10.png",
+      "SourceId": "Web_ECommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\",
+      "BasePath": "_content/Web_ECommerce",
+      "RelativePath": "img/loja-virtual-10.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\loja-virtual-10.png"
+    },
+    {
+      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\img\\loja-virtual-2.png",
+      "SourceId": "Web_ECommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\",
+      "BasePath": "_content/Web_ECommerce",
+      "RelativePath": "img/loja-virtual-2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\loja-virtual-2.png"
+    },
+    {
       "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\1.jpg",
       "SourceId": "Web_ECommerce",
       "SourceType": "Discovered",
@@ -1139,12 +1190,12 @@
       "OriginalItemSpec": "wwwroot\\imgProducts\\1.jpg"
     },
     {
-      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\10.jpg",
+      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\23.jpg",
       "SourceId": "Web_ECommerce",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\",
       "BasePath": "_content/Web_ECommerce",
-      "RelativePath": "imgProducts/10.jpg",
+      "RelativePath": "imgProducts/23.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1153,15 +1204,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imgProducts\\10.jpg"
+      "OriginalItemSpec": "wwwroot\\imgProducts\\23.jpg"
     },
     {
-      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\19.jpg",
+      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\24.jpg",
       "SourceId": "Web_ECommerce",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\",
       "BasePath": "_content/Web_ECommerce",
-      "RelativePath": "imgProducts/19.jpg",
+      "RelativePath": "imgProducts/24.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1170,15 +1221,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imgProducts\\19.jpg"
+      "OriginalItemSpec": "wwwroot\\imgProducts\\24.jpg"
     },
     {
-      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\20.jpg",
+      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\25.jpg",
       "SourceId": "Web_ECommerce",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\",
       "BasePath": "_content/Web_ECommerce",
-      "RelativePath": "imgProducts/20.jpg",
+      "RelativePath": "imgProducts/25.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1187,15 +1238,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imgProducts\\20.jpg"
+      "OriginalItemSpec": "wwwroot\\imgProducts\\25.jpg"
     },
     {
-      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\21.jpg",
+      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\26.jpg",
       "SourceId": "Web_ECommerce",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\",
       "BasePath": "_content/Web_ECommerce",
-      "RelativePath": "imgProducts/21.jpg",
+      "RelativePath": "imgProducts/26.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1204,15 +1255,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imgProducts\\21.jpg"
+      "OriginalItemSpec": "wwwroot\\imgProducts\\26.jpg"
     },
     {
-      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\5.png",
+      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\27.jpg",
       "SourceId": "Web_ECommerce",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\",
       "BasePath": "_content/Web_ECommerce",
-      "RelativePath": "imgProducts/5.png",
+      "RelativePath": "imgProducts/27.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1221,15 +1272,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imgProducts\\5.png"
+      "OriginalItemSpec": "wwwroot\\imgProducts\\27.jpg"
     },
     {
-      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\6.jpg",
+      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\28.jpg",
       "SourceId": "Web_ECommerce",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\",
       "BasePath": "_content/Web_ECommerce",
-      "RelativePath": "imgProducts/6.jpg",
+      "RelativePath": "imgProducts/28.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1238,7 +1289,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imgProducts\\6.jpg"
+      "OriginalItemSpec": "wwwroot\\imgProducts\\28.jpg"
     },
     {
       "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\js\\site.js",

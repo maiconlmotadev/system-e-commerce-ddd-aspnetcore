@@ -53,7 +53,7 @@ ObjectSale.LoadProducts = function () {
                 
                 if (Entitie.url != null && Entitie.url != "" && Entitie.url != undefined) {
 
-                    htmlContent += "<img width='200' height='100' src='" + Entitie.url + "'/></br>";
+                    htmlContent += "<img width='100' height='100' src='" + Entitie.url + "'/></br>";
                 }
 
                 htmlContent += "</br><label > Price: " + Entitie.price + "</label></br>";

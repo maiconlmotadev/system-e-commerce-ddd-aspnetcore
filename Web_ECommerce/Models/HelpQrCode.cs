@@ -31,7 +31,6 @@ namespace Web_ECommerce.Models
             return bitMapBytes;
 
         }
-
         private static byte[] BitmapToBytes(Bitmap img)
         {
             using (MemoryStream ms = new MemoryStream()) 
@@ -68,9 +67,9 @@ namespace Web_ECommerce.Models
 
                 var invoiceLogo = string.Concat(webRoot, "/img/", "loja-virtual-1.png");
 
-                XImage imagem = XImage.FromFile(invoiceLogo);
+                XImage image = XImage.FromFile(invoiceLogo);
 
-                graphics.DrawImage(imagem, 20, 5, 300, 50);
+                graphics.DrawImage(image, 20, 5, 50, 50);
                 #endregion
 
                 #region Information 1
@@ -80,7 +79,7 @@ namespace Web_ECommerce.Models
 
                 billingReport.Alignment = PdfSharpCore.Drawing.Layout.XParagraphAlignment.Center;
 
-                billingReport.DrawString("BOLETO ONLINE", title, fontColor, new XRect(0, 65, page.Width, page.Height));
+                billingReport.DrawString("ONLINE BILL", title, fontColor, new XRect(0, 65, page.Width, page.Height));
 
                 #endregion
 
@@ -101,14 +100,14 @@ namespace Web_ECommerce.Models
 
 
                 detailsTitleHeightY += 9;
-                details.DrawString("Quantidade:", InfoTitle_1, fontColor, new XRect(25, detailsTitleHeightY, page.Width, page.Height));
+                details.DrawString("Quantity:", InfoTitle_1, fontColor, new XRect(25, detailsTitleHeightY, page.Width, page.Height));
                 details.DrawString(userBuy.ProductsQuantity.ToString(), InfoTitle_1, fontColor, new XRect(150, detailsTitleHeightY, page.Width, page.Height));
 
                 detailsTitleHeightY += 9;
                 details.DrawString("Amount:", InfoTitle_1, fontColor, new XRect(25, detailsTitleHeightY, page.Width, page.Height));
                 details.DrawString(userBuy.ProductsQuantity.ToString(), InfoTitle_1, fontColor, new XRect(150, detailsTitleHeightY, page.Width, page.Height));
 
-                var tituloInfo_2 = new PdfSharpCore.Drawing.XFont("Arial", 8, XFontStyle.Bold);
+                var InfoTitle_2 = new PdfSharpCore.Drawing.XFont("Arial", 8, XFontStyle.Bold);
 
 
                 try
@@ -120,7 +119,7 @@ namespace Web_ECommerce.Models
                     XImage qrCode = XImage.FromStream(() => streamImage);
 
                     detailsTitleHeightY += 40;
-                    graphics.DrawImage(qrCode, 140, detailsTitleHeightY, 310, 310);
+                    graphics.DrawImage(qrCode, 140, detailsTitleHeightY, 200, 310);
                 }
                 catch (Exception error)
                 {
@@ -128,9 +127,18 @@ namespace Web_ECommerce.Models
                 }
 
                 detailsTitleHeightY += 620;
-                details.DrawString("Invoice with QrCode for online payment.", tituloInfo_2, fontColor, new XRect(20, detailsTitleHeightY, page.Width, page.Height));
+                details.DrawString("Invoice with QrCode for online payment.", InfoTitle_2, fontColor, new XRect(20, detailsTitleHeightY, page.Width, page.Height));
 
                 #endregion
+
+
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    var contentType = "application/pdf";
+
+                    doc.Save(stream, false);
+                    return File(stream.ToArray(), contentType, "VirtualStoreInvoice.pdf");
+                }
 
             }
         }               

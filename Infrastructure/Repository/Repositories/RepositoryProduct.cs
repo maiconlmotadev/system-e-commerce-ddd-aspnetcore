@@ -77,7 +77,7 @@ namespace Infrastructure.Repository.Repositories
         }
 
 
-        public async Task<List<Product>> ListUserProducts(string userId)
+        public async Task<List<Product>> ListProductsUser(string userId)
         {
             using (var bank = new ContextBase(_optionsBuilder))
             {

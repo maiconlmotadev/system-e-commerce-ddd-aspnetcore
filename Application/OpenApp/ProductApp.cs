@@ -43,7 +43,7 @@ namespace ApplicationApp.OpenApp
 
         public async Task<List<Product>> ListUserPoduct(string userId)
         {
-            return await _IProduct.ListUserProducts(userId);
+            return await _IProduct.ListProductsUser(userId);
         }
 
         public async Task Add(Product Object)

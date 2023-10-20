@@ -11,7 +11,7 @@ namespace Domain.Interfaces.InterfaceProduct
 {
     public interface IProduct : IGeneric<Product>
     { 
-        Task<List<Product>> ListUserProducts(string userId);
+        Task<List<Product>> ListProductsUser(string userId);
 
         Task<List<Product>> ListProducts(Expression<Func<Product, bool>> exProduct);
 

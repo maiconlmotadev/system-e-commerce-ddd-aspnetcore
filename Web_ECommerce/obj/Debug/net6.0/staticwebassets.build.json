@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K4w9DRV7bHc+YP6aQckiNrRPxhw2hSjNhMgwye99shI=",
+  "Hash": "x7IqDvq6DCgjSixfUJp/iFB7GdiS2NYMt7jCtdY0NIU=",
   "Source": "Web_ECommerce",
   "BasePath": "_content/Web_ECommerce",
   "Mode": "Default",
@@ -1154,23 +1154,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\loja-virtual-10.png"
-    },
-    {
-      "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\img\\loja-virtual-2.png",
-      "SourceId": "Web_ECommerce",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\",
-      "BasePath": "_content/Web_ECommerce",
-      "RelativePath": "img/loja-virtual-2.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\loja-virtual-2.png"
     },
     {
       "Identity": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\imgProducts\\1.jpg",

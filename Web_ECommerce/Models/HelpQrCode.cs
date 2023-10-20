@@ -1,5 +1,4 @@
-﻿
-using Entities.Entities;
+﻿using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
 using PdfSharpCore.Drawing;
 using QRCoder;
@@ -13,10 +12,10 @@ namespace Web_ECommerce.Models
 {
     public class HelpQrCode : Controller
     {
-        private async Task<byte[]> GenerateQrCode (string bankDetails)
+        private async Task<byte[]> GenerateQrCode(string bankDetails)
         {
             // Lib de gerar Qrcode:  QRCodeGenerator
-            QRCodeGenerator qrCodeGenerator = new QRCodeGenerator ();
+            QRCodeGenerator qrCodeGenerator = new QRCodeGenerator();
 
             // Recebe os dados do QrCode
             QRCodeData qrCodeData = qrCodeGenerator.CreateQrCode(bankDetails, QRCodeGenerator.ECCLevel.H);
@@ -26,14 +25,14 @@ namespace Web_ECommerce.Models
 
             Bitmap qrCodeImage = qrCode.GetGraphic(20);
 
-            var bitMapBytes = BitmapToBytes (qrCodeImage);
+            var bitMapBytes = BitmapToBytes(qrCodeImage);
 
             return bitMapBytes;
 
         }
         private static byte[] BitmapToBytes(Bitmap img)
         {
-            using (MemoryStream ms = new MemoryStream()) 
+            using (MemoryStream ms = new MemoryStream())
             {
                 img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
 
@@ -141,7 +140,7 @@ namespace Web_ECommerce.Models
                 }
 
             }
-        }               
-        
+        }
+
     }
 }

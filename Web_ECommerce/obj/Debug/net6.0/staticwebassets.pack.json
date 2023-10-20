@@ -53,10 +53,6 @@
       "PackagePath": "staticwebassets\\img\\loja-virtual-10.png"
     },
     {
-      "Id": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\img\\loja-virtual-2.png",
-      "PackagePath": "staticwebassets\\img\\loja-virtual-2.png"
-    },
-    {
       "Id": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

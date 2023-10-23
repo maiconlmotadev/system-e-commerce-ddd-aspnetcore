@@ -31,13 +31,14 @@ ObjectSale.AddCart = function (idProduct) {
     });
 }
 
-ObjectSale.LoadProducts = function () {
+ObjectSale.LoadProducts = function (description) {
     $.ajax({
         type: "GET",
         url: "/api/ListProductsWithStock",
         dataType: "JSON",
         cache: false,
         async: true,
+        data: { description: description },
         success: function (data) {
 
             var htmlContent = "";
@@ -96,4 +97,12 @@ ObjectSale.LoadQuantCart = function () {
 $(function () {
     ObjectSale.LoadProducts();
     ObjectSale.LoadQuantCart();
+
+    $("#search").click(
+        function () {
+            var description = $("#description").val();
+            ObjectSale.LoadProducts(description);
+        }
+    );
+
 }); 

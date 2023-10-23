@@ -144,9 +144,9 @@ namespace Web_ECommerce.Controllers
 
         [AllowAnonymous]
         [HttpGet("/api/ListProductsWithStock")]
-        public async Task<JsonResult> ListProductsWithStock()
+        public async Task<JsonResult> ListProductsWithStock(string description)
         {
-            return Json(await _IProductApp.ListProductsWithStock());
+            return Json(await _IProductApp.ListProductsWithStock(description));
         }
 
         public async Task<IActionResult> ListProductsUserCart()

@@ -44,7 +44,7 @@ namespace ApplicationApp.OpenApp
 
         public async Task<int> QuantProductUserCart(string userId)
         {
-            return await _IUserBuy.quantProductUserCart(userId);
+            return await _IUserBuy.QuantProductUserCart(userId);
         }
 
         public async Task Add(UserBuy Object)

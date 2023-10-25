@@ -70,7 +70,10 @@ namespace Entities.Entities
         public IFormFile Image { get; set; }
 
         [Column("PRD_URL")]
-        public string? Url { get; set; } 
+        public string? Url { get; set; }
+
+        [NotMapped]
+        public DateTime? PurchaseDate { get; set; }
 
     }
 }

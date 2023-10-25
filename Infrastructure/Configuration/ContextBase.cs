@@ -15,6 +15,8 @@ namespace Infrastructure.Configuration
         public DbSet<UserBuy> UserBuy { get; set; }
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
 
+        public DbSet<Shopping> Shopping { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

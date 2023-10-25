@@ -11,9 +11,11 @@ namespace Domain.Interfaces.UserBuyInterface
 {
     public interface IUserBuy : IGeneric<UserBuy>
     {
-        public Task<int> quantProductUserCart(string userId);
+        public Task<int> QuantProductUserCart(string userId);
 
         public Task<UserBuy> ProductsPurchasedByState(string userId, EnumBuyState state);
+
+        public Task<List<UserBuy>> MyPurchasedByState(string userId, EnumBuyState state);
 
         public Task<bool> ConfirmPurchaseUserCart(string userId);
 

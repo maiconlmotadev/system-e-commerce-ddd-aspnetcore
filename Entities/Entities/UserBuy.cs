@@ -56,5 +56,12 @@ namespace Entities.Entities
         [NotMapped]
         public List<Product> ProductsList { get; set;}
 
+
+        [Display(Name = "Shopping")]
+        [ForeignKey("TB_SHOPPING")]
+        [Column(Order = 1)]
+        public int ShoppingId { get; set; }
+        public virtual Shopping Shopping { get; set; }
+
     }
 }

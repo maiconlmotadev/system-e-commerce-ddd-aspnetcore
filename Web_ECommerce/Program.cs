@@ -12,6 +12,7 @@ using Domain.Services;
 using Entities.Entities;
 using FluentAssertions.Common;
 using Domain.Interfaces.UserBuyInterface;
+using Domain.Interfaces.InterfaceShopping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,10 +34,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton(typeof(IGeneric<>), typeof(RepositoryGenerics<>));
 builder.Services.AddSingleton<IProduct, RepositoryProduct>();
 builder.Services.AddSingleton<IUserBuy, RepositoryUserBuy>();
+builder.Services.AddSingleton<IShopping, RepositoryShopping>();
 
 // APPLICATION INTERFACE
 builder.Services.AddSingleton<IProductApp, ProductApp>();
 builder.Services.AddSingleton<IUserBuyApp, UserBuyApp>();
+builder.Services.AddSingleton<IShoppingApp, ShoppingApp>();
 
 // DOMAIN SERVICE
 builder.Services.AddSingleton<IServiceProduct, ServiceProduct>();

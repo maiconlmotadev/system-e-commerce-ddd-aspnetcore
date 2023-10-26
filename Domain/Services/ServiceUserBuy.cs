@@ -22,9 +22,15 @@ namespace Domain.Services
             return await _IUserBuy.ProductsPurchasedByState(userId, Entities.Entities.Enums.EnumBuyState.Product_Cart);
         }
 
-        public async Task<UserBuy> BuyProducts(string userId)
+        public async Task<List<UserBuy>> MyPurchases(string userId)
         {
-            return await _IUserBuy.ProductsPurchasedByState(userId, Entities.Entities.Enums.EnumBuyState.Product_Purchased);
+            return await _IUserBuy.MyPurchasedByState(userId, Entities.Entities.Enums.EnumBuyState.Product_Purchased);
+        }
+
+        public async Task<UserBuy> BuyProducts(string userId, int? purchaseId = null)
+        {
+            return await _IUserBuy.ProductsPurchasedByState(userId, Entities.Entities.Enums.EnumBuyState.Product_Purchased, purchaseId);
         }
     }
 }
+     

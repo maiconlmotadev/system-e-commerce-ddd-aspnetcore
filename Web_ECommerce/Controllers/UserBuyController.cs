@@ -35,7 +35,7 @@ namespace Web_ECommerce.Controllers
         public async Task<IActionResult> MyBuys(bool message = false)
         {
             var user = await _userManager.GetUserAsync(User);
-            var userBuy = await _IUserBuyApp.BuyProducts(user.Id);
+            var userBuy = await _IUserBuyApp.MyPurchases(user.Id);
 
             if (message)
             {
@@ -59,11 +59,11 @@ namespace Web_ECommerce.Controllers
 
         }
 
-        public async Task<IActionResult> Print()
+        public async Task<IActionResult> Print(int id)
         {
             var user = await _userManager.GetUserAsync(User);
 
-            var userBuy = await _IUserBuyApp.BuyProducts(user.Id);
+            var userBuy = await _IUserBuyApp.BuyProducts(user.Id, id);
 
             return await Download(userBuy, _IWebHostEnvironment);
         }

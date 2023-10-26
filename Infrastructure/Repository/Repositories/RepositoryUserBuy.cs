@@ -4,6 +4,7 @@ using Entities.Entities.Enums;
 using Infrastructure.Configuration;
 using Infrastructure.Repository.Generics;
 using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Crypto.Digests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,27 +24,34 @@ namespace Infrastructure.Repository.Repositories
 
         public async Task<bool> ConfirmPurchaseUserCart(string userId)
         {
-
             try
             {
 
-            using (var bank = new ContextBase(_optionsbuilder))
+            using (var db = new ContextBase(_optionsbuilder))
             {
                 var userBuy = new UserBuy();
                 userBuy.ProductsList = new List<Product>();
 
-                var productsUserCart = await (from p in bank.Product
-                                              join c in bank.UserBuy on p.Id equals c.IdProduct
+                var productsUserCart = await (from p in db.Product
+                                              join c in db.UserBuy on p.Id equals c.IdProduct
                                               where c.UserId.Equals(userId) && c.State == EnumBuyState.Product_Cart
                                               select c).AsNoTracking().ToListAsync();
 
                 productsUserCart.ForEach(p =>
                 {
+                    userBuy.ShoppingId = p.ShoppingId;
                     p.State = EnumBuyState.Product_Purchased;
                 });
 
-                bank.UpdateRange(productsUserCart);
-                await bank.SaveChangesAsync();
+                var purchase = await db.Shopping.AsNoTracking().FirstOrDefaultAsync(c => c.Id == userBuy.ShoppingId);
+                if (purchase != null)
+                {
+                        purchase.State = EnumBuyState.Product_Purchased;
+                }
+
+                db.Update(userBuy);
+                db.UpdateRange(productsUserCart);
+                await db.SaveChangesAsync();
 
                 return true;                                 
             }
@@ -55,7 +63,7 @@ namespace Infrastructure.Repository.Repositories
 
         }
 
-        public async Task<UserBuy> ProductsPurchasedByState(string userId, EnumBuyState state)
+        public async Task<UserBuy> ProductsPurchasedByState(string userId, EnumBuyState state, int? purchaseId = null)
         {
             using (var db = new ContextBase(_optionsbuilder))
             {
@@ -67,6 +75,7 @@ namespace Infrastructure.Repository.Repositories
                                               join sh in db.Shopping on s.ShoppingId equals sh.Id
                                               where s.UserId.Equals(userId) && s.State == state &&
                                               sh.UserId.Equals(userId) && sh.State == state
+                                              && (purchaseId == null || sh.Id == purchaseId)
                                               select new Product
                                               {
                                                   Id = p.Id,

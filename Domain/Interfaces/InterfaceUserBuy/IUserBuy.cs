@@ -13,7 +13,7 @@ namespace Domain.Interfaces.UserBuyInterface
     {
         public Task<int> QuantProductUserCart(string userId);
 
-        public Task<UserBuy> ProductsPurchasedByState(string userId, EnumBuyState state);
+        public Task<UserBuy> ProductsPurchasedByState(string userId, EnumBuyState state, int? shoppingId = null);
 
         public Task<List<UserBuy>> MyPurchasedByState(string userId, EnumBuyState state);
 

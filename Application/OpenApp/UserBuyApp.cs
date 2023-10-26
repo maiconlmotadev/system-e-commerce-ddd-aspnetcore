@@ -28,18 +28,15 @@ namespace ApplicationApp.OpenApp
             return await _IServiceUserBuy.BuyCart(userId);
         }
 
-        public async Task<UserBuy> BuyProducts(string userId)
+        public async Task<UserBuy> BuyProducts(string userId, int? purchaseId = null)
         {
-            return await _IServiceUserBuy.BuyProducts(userId);
+            return await _IServiceUserBuy.BuyProducts(userId, purchaseId);
         }
 
         public async Task<bool> ConfirmPurchaseCartUser(string userId)
         {
             return await _IUserBuy.ConfirmPurchaseUserCart(userId);
         }
-
-
-
 
 
         public async Task<int> QuantProductUserCart(string userId)
@@ -72,8 +69,9 @@ namespace ApplicationApp.OpenApp
             await _IUserBuy.Update(Object);
         }
 
-
-
-       
+        public async Task<List<UserBuy>> MyPurchases(string userId)
+        {
+            return await _IServiceUserBuy.MyPurchases(userId);
+        }
     }
 }

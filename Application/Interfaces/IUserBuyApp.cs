@@ -13,9 +13,11 @@ namespace ApplicationApp.Interfaces
 
         public Task<UserBuy> BuyCart(string userId);
 
-        public Task<UserBuy> BuyProducts(string userId);
+        public Task<UserBuy> BuyProducts(string userId, int? purchaseId = null);
 
         public Task<bool> ConfirmPurchaseCartUser(string userId);
+
+        public Task<List<UserBuy>> MyPurchases(string userId);
     }
 }
      

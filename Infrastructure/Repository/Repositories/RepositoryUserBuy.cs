@@ -27,34 +27,34 @@ namespace Infrastructure.Repository.Repositories
             try
             {
 
-            using (var db = new ContextBase(_optionsbuilder))
-            {
-                var userBuy = new UserBuy();
-                userBuy.ProductsList = new List<Product>();
-
-                var productsUserCart = await (from p in db.Product
-                                              join c in db.UserBuy on p.Id equals c.IdProduct
-                                              where c.UserId.Equals(userId) && c.State == EnumBuyState.Product_Cart
-                                              select c).AsNoTracking().ToListAsync();
-
-                productsUserCart.ForEach(p =>
+                using (var db = new ContextBase(_optionsbuilder))
                 {
-                    userBuy.ShoppingId = p.ShoppingId;
-                    p.State = EnumBuyState.Product_Purchased;
-                });
+                    var userBuy = new UserBuy();
+                    userBuy.ProductsList = new List<Product>();
 
-                var purchase = await db.Shopping.AsNoTracking().FirstOrDefaultAsync(c => c.Id == userBuy.ShoppingId);
-                if (purchase != null)
-                {
+                    var productsUserCart = await (from p in db.Product
+                                                  join s in db.UserBuy on p.Id equals s.IdProduct
+                                                  where s.UserId.Equals(userId) && s.State == EnumBuyState.Product_Cart
+                                                  select s).AsNoTracking().ToListAsync();
+
+                    productsUserCart.ForEach(p =>
+                    {
+                        userBuy.ShoppingId = p.ShoppingId;
+                        p.State = EnumBuyState.Product_Purchased;
+                    });
+
+                    var purchase = await db.Shopping.AsNoTracking().FirstOrDefaultAsync(s => s.Id == userBuy.ShoppingId);
+                    if (purchase != null)
+                    {
                         purchase.State = EnumBuyState.Product_Purchased;
+                    }
+
+                    db.Update(purchase);
+                    db.UpdateRange(productsUserCart);
+                    await db.SaveChangesAsync();
+
+                    return true;
                 }
-
-                db.Update(userBuy);
-                db.UpdateRange(productsUserCart);
-                await db.SaveChangesAsync();
-
-                return true;                                 
-            }
             }
             catch (Exception error)
             {
@@ -86,13 +86,13 @@ namespace Infrastructure.Repository.Repositories
                                                   BuyQuant = s.BuyQuantity,
                                                   IdCartProduct = s.Id,
                                                   Url = p.Url,
-                                                  PurchaseDate = sh.PurchaseDate, 
+                                                  PurchaseDate = sh.PurchaseDate,
 
                                               }).AsNoTracking().ToListAsync();
 
-                
-                userBuy.ProductsList = productsUserCart;             
-                userBuy.ApplicationUser = await db.ApplicationUser.FirstOrDefaultAsync(u => u.Id.Equals(userId));                          
+
+                userBuy.ProductsList = productsUserCart;
+                userBuy.ApplicationUser = await db.ApplicationUser.FirstOrDefaultAsync(u => u.Id.Equals(userId));
                 userBuy.ProductsQuantity = productsUserCart.Count();
                 userBuy.DeliveryAddress = string.Concat(userBuy.ApplicationUser.Address, " - ", userBuy.ApplicationUser.AddressComplement, " - CodPost: ", userBuy.ApplicationUser.CPost);
                 userBuy.TotalPrice = productsUserCart.Sum(v => v.Price);
@@ -117,8 +117,7 @@ namespace Infrastructure.Repository.Repositories
 
             using (var db = new ContextBase(_optionsbuilder))
             {
-                var userPurchases = await db.Shopping
-                    .Where(sh => sh.State == state && sh.UserId.Equals(userId)).ToListAsync();
+                var userPurchases = await db.Shopping.Where(sh => sh.State == state && sh.UserId.Equals(userId)).ToListAsync();
 
                 foreach (var item in userPurchases)
                 {
@@ -126,21 +125,21 @@ namespace Infrastructure.Repository.Repositories
                     cuserPurchase.ProductsList = new List<Product>();
 
                     var userCartProducts = await (from p in db.Product
-                                                         join s in db.UserBuy on p.Id equals s.IdProduct
-                                                         where s.UserId.Equals(userId) && s.State == state && s.ShoppingId == item.Id
-                                                         select new Product
-                                                         {
-                                                             Id = p.Id,
-                                                             Name = p.Name,
-                                                             Description = p.Description,
-                                                             Observation = p.Observation,
-                                                             Price = p.Price,
-                                                             BuyQuant = s.BuyQuantity,
-                                                             IdCartProduct = s.Id,
-                                                             Url = p.Url,
-                                                             PurchaseDate = item.PurchaseDate,
+                                                  join s in db.UserBuy on p.Id equals s.IdProduct
+                                                  where s.UserId.Equals(userId) && s.State == state && s.ShoppingId == item.Id
+                                                  select new Product
+                                                  {
+                                                      Id = p.Id,
+                                                      Name = p.Name,
+                                                      Description = p.Description,
+                                                      Observation = p.Observation,
+                                                      Price = p.Price,
+                                                      BuyQuant = s.BuyQuantity,
+                                                      IdCartProduct = s.Id,
+                                                      Url = p.Url,
+                                                      PurchaseDate = item.PurchaseDate,
 
-                                                         }).AsNoTracking().ToListAsync();
+                                                  }).AsNoTracking().ToListAsync();
 
                     cuserPurchase.ProductsList = userCartProducts;
                     cuserPurchase.ApplicationUser = await db.ApplicationUser.FirstOrDefaultAsync(u => u.Id.Equals(userId));

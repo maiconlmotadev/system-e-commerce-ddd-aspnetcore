@@ -179,7 +179,6 @@ namespace Infrastructure.Migrations
                         .HasColumnName("PRD_STOCK_QUANTITY");
 
                     b.Property<string>("Url")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("PRD_URL");
 
@@ -192,6 +191,34 @@ namespace Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("TB_PRODUCT");
+                });
+
+            modelBuilder.Entity("Entities.Entities.Shopping", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("SHO_ID");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime?>("PurchaseDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("SHO_DATE_SHOPPING");
+
+                    b.Property<int>("State")
+                        .HasColumnType("int")
+                        .HasColumnName("SHO_STATE");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnOrder(1);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TB_SHOPPING");
                 });
 
             modelBuilder.Entity("Entities.Entities.UserBuy", b =>
@@ -213,6 +240,10 @@ namespace Infrastructure.Migrations
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ShoppingId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(1);
+
                     b.Property<int>("State")
                         .HasColumnType("int")
                         .HasColumnName("CUS_STATE");
@@ -223,6 +254,8 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("ShoppingId");
 
                     b.HasIndex("UserId");
 
@@ -375,11 +408,26 @@ namespace Infrastructure.Migrations
                     b.Navigation("ApplicationUser");
                 });
 
+            modelBuilder.Entity("Entities.Entities.Shopping", b =>
+                {
+                    b.HasOne("Entities.Entities.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("ApplicationUser");
+                });
+
             modelBuilder.Entity("Entities.Entities.UserBuy", b =>
                 {
                     b.HasOne("Entities.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId");
+
+                    b.HasOne("Entities.Entities.Shopping", "Shopping")
+                        .WithMany()
+                        .HasForeignKey("ShoppingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Entities.Entities.ApplicationUser", "ApplicationUser")
                         .WithMany()
@@ -388,6 +436,8 @@ namespace Infrastructure.Migrations
                     b.Navigation("ApplicationUser");
 
                     b.Navigation("Product");
+
+                    b.Navigation("Shopping");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

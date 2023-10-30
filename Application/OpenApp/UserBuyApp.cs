@@ -39,6 +39,7 @@ namespace ApplicationApp.OpenApp
         }
 
 
+
         public async Task<int> QuantProductUserCart(string userId)
         {
             return await _IUserBuy.QuantProductUserCart(userId);
@@ -64,6 +65,8 @@ namespace ApplicationApp.OpenApp
             return await _IUserBuy.List();
         }
 
+
+
         public async Task Update(UserBuy Object)
         {
             await _IUserBuy.Update(Object);
@@ -72,6 +75,11 @@ namespace ApplicationApp.OpenApp
         public async Task<List<UserBuy>> MyPurchases(string userId)
         {
             return await _IServiceUserBuy.MyPurchases(userId);
+        }
+
+        public async Task AddProduct(string userId, UserBuy userBuy)
+        {
+            await _IServiceUserBuy.AddProduct(userId, userBuy);
         }
     }
 }

@@ -114,7 +114,7 @@ namespace Web_ECommerce.Areas.Identity.Pages.Account
 
             [MaxLength(20)]
             [Display(Name = "Telephone")]
-            public string Telephone { get; set; } 
+            public string Telephone { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -153,6 +153,9 @@ namespace Web_ECommerce.Areas.Identity.Pages.Account
 
                 await _userStore.SetUserNameAsync((ApplicationUser)user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync((ApplicationUser)user, Input.Email, CancellationToken.None);
+
+
+
                 var result = await _userManager.CreateAsync((ApplicationUser)user, Input.Password);
 
                 if (result.Succeeded)
@@ -195,7 +198,24 @@ namespace Web_ECommerce.Areas.Identity.Pages.Account
         {
             try
             {
-                return Activator.CreateInstance<ApplicationUser>();
+                //return Activator.CreateInstance<ApplicationUser>();
+
+                var user = new ApplicationUser
+                {
+                    UserName = Input.Name,
+                    Email = Input.Email,
+                    CellPhone = Input.CellPhone,
+                    CPost = Input.CPost,
+                    Nif = Input.Nif,
+                    Telephone = Input.Telephone,
+                    Address = Input.Address,
+                    AddressComplement = Input.AddressComplement,
+                    Age = Input.Age,
+                    Name = Input.Name,
+                    State = true,
+                    Type = Entities.Entities.Enums.UserType.Commom,
+                };
+                return user;
             }
             catch
             {

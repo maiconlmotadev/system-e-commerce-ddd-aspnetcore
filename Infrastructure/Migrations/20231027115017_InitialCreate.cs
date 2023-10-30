@@ -178,7 +178,8 @@ namespace Infrastructure.Migrations
                     PRD_STOCK_QUANTITY = table.Column<int>(type: "int", nullable: false),
                     PRO_STATE = table.Column<bool>(type: "bit", nullable: false),
                     PRD_REGISTRATION_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PRD_CHANGE_DATE = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    PRD_CHANGE_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PRD_URL = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -191,9 +192,30 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TB_SHOPPING",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    SHO_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SHO_STATE = table.Column<int>(type: "int", nullable: false),
+                    SHO_DATE_SHOPPING = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_SHOPPING", x => x.SHO_ID);
+                    table.ForeignKey(
+                        name: "FK_TB_SHOPPING_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TB_USER_BUY",
                 columns: table => new
                 {
+                    ShoppingId = table.Column<int>(type: "int", nullable: false),
                     CUS_ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IdProduct = table.Column<int>(type: "int", nullable: false),
@@ -215,6 +237,12 @@ namespace Infrastructure.Migrations
                         column: x => x.ProductId,
                         principalTable: "TB_PRODUCT",
                         principalColumn: "PRO_ID");
+                    table.ForeignKey(
+                        name: "FK_TB_USER_BUY_TB_SHOPPING_ShoppingId",
+                        column: x => x.ShoppingId,
+                        principalTable: "TB_SHOPPING",
+                        principalColumn: "SHO_ID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -262,9 +290,19 @@ namespace Infrastructure.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_TB_SHOPPING_UserId",
+                table: "TB_SHOPPING",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_TB_USER_BUY_ProductId",
                 table: "TB_USER_BUY",
                 column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_USER_BUY_ShoppingId",
+                table: "TB_USER_BUY",
+                column: "ShoppingId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TB_USER_BUY_UserId",
@@ -297,6 +335,9 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "TB_PRODUCT");
+
+            migrationBuilder.DropTable(
+                name: "TB_SHOPPING");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

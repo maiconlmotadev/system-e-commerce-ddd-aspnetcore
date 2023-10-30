@@ -14,5 +14,7 @@ namespace Domain.Interfaces.InterfaceServices
         public Task<UserBuy> BuyProducts(string userId, int? purchaseId = null);
 
         public Task<List<UserBuy>> MyPurchases(string userId);
+
+        public Task AddProduct(string userId, UserBuy userBuy);
     }
 }

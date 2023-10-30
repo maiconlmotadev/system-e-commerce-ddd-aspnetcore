@@ -52,7 +52,7 @@ namespace Entities.Entities
         [Column("USR_TELEPHONE")]
         [MaxLength(20)]
         [Display(Name = "Telephone")]
-        public string? Telefhone { get; set; }
+        public string? Telephone { get; set; }
 
         [Column("USR_STATE")]
         [Display(Name = "State")]

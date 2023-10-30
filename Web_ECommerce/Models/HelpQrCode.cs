@@ -104,7 +104,7 @@ namespace Web_ECommerce.Models
 
                 detailsTitleHeightY += 9;
                 details.DrawString("Amount:", InfoTitle_1, fontColor, new XRect(25, detailsTitleHeightY, page.Width, page.Height));
-                details.DrawString(userBuy.ProductsQuantity.ToString(), InfoTitle_1, fontColor, new XRect(150, detailsTitleHeightY, page.Width, page.Height));
+                details.DrawString(userBuy.TotalPrice.ToString(), InfoTitle_1, fontColor, new XRect(150, detailsTitleHeightY, page.Width, page.Height));
 
                 var InfoTitle_2 = new PdfSharpCore.Drawing.XFont("Arial", 8, XFontStyle.Bold);
 

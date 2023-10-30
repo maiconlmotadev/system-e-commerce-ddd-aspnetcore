@@ -9,7 +9,7 @@
 
     @foreach (var item in Model)
     {
-        @if (item.ProductsList.Any())
+        if (item.ProductsList.Any())
         {
         <br />
         <a class="nav-link text-dark" asp-area="" asp-controller="UserBuy" asp-route-id="@item.Id" asp-action="Print">Print invoice</a>

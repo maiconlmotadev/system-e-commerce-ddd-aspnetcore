@@ -32,11 +32,12 @@ namespace Infrastructure.Repository.Repositories
 
         public async Task<List<Product>> ListProductsUserCart(string userId)
         {
-            using (var bank = new ContextBase(_optionsBuilder))
+            using (var db = new ContextBase(_optionsBuilder))
             {
-                var productsUserCart = await (from p in bank.Product
-                                              join c in bank.UserBuy on p.Id equals c.IdProduct
-                                              where c.UserId.Equals(userId) && c.State == EnumBuyState.Product_Cart
+                var productsUserCart = await (from p in db.Product
+                                              join s in db.UserBuy on p.Id equals s.IdProduct
+                                              join sh in db.Shopping on s.ShoppingId equals sh.Id
+                                              where s.UserId.Equals(userId) && s.State == EnumBuyState.Product_Cart
                                               select new Product
                                               {
                                                 Id = p.Id,
@@ -44,9 +45,10 @@ namespace Infrastructure.Repository.Repositories
                                                 Description = p.Description,
                                                 Observation = p.Observation,
                                                 Price = p.Price,
-                                                BuyQuant = c.BuyQuantity, 
-                                                IdCartProduct = c.Id,
+                                                BuyQuant = s.BuyQuantity, 
+                                                IdCartProduct = s.Id,
                                                 Url = p.Url,
+                                                PurchaseDate = sh.PurchaseDate,
 
                                               }).AsNoTracking().ToListAsync();
                 return productsUserCart;

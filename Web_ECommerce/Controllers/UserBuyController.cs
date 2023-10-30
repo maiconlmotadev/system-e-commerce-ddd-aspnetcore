@@ -74,9 +74,10 @@ namespace Web_ECommerce.Controllers
         {
 
             var user = await _userManager.GetUserAsync(User);
+
             if (user != null)
             {
-                await _IUserBuyApp.Add(new UserBuy
+                await _IUserBuyApp.AddProduct(user.Id ,new UserBuy
                 {
                     IdProduct = Convert.ToInt32(id),
                     BuyQuantity = Convert.ToInt32(quant),

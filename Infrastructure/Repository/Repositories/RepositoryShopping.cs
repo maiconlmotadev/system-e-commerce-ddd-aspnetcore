@@ -28,7 +28,7 @@ namespace Infrastructure.Repository.Repositories
         {
             using (var db = new ContextBase(_optionsbuilder))
             {
-                return await db.Shopping.FirstOrDefaultAsync(c => c.State == state && c.UserId == userId);
+                return await db.Shopping.FirstOrDefaultAsync(s => s.State == state && s.UserId == userId);
             }
         }
     }

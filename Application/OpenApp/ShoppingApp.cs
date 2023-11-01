@@ -11,8 +11,8 @@ namespace ApplicationApp.OpenApp
 {
     public class ShoppingApp : IShoppingApp
     {
-
         private readonly IShopping _IShopping;
+
         public ShoppingApp(IShopping IShopping)
         {
             _IShopping = IShopping;

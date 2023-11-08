@@ -11,105 +11,107 @@
     {
         if (item.ProductsList.Any())
         {
-        <br />
-        <a class="nav-link text-dark" asp-area="" asp-controller="UserBuy" asp-route-id="@item.Id" asp-action="Print">Print invoice</a>
-        <hr />
-        <dl class="row">
+            
+            <dl class="row">
 
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.DeliveryAddress)
-            </dt>
-            <dd class="col-sm-10">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.DeliveryAddress)
+                </dt>
+                <dd class="col-sm-10">
                     @Html.DisplayFor(model => item.DeliveryAddress)
 
-            </dd>
+                </dd>
 
-            <dt class="col-sm-2">
-                Postal Code
-            </dt>
-            <dd class="col-sm-10">
+                <dt class="col-sm-2">
+                    Postal Code
+                </dt>
+                <dd class="col-sm-10">
                     @Html.DisplayFor(model => item.ApplicationUser.CPost)
-            </dd>
+                </dd>
 
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.ProductsQuantity)
-            </dt>
-            <dd class="col-sm-10">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ProductsQuantity)
+                </dt>
+                <dd class="col-sm-10">
                     @Html.DisplayFor(model => item.ProductsQuantity)
-            </dd>
+                </dd>
 
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.TotalPrice)
-            </dt>
-            <dd class="col-sm-10">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.TotalPrice)
+                </dt>
+                <dd class="col-sm-10">
                     @Html.DisplayFor(model => item.TotalPrice)
-            </dd>
+                </dd>
 
-        </dl>
-        <h4>Products purchased</h4>
+            </dl>
+            <h4>Products purchased</h4>
 
 
-        <table class="table">
-            <thead>
-                <tr>
-
-                    <th>
-                        Name
-                    </th>
-                    <th>Image</th>
-                    <th>
-                        Description
-                    </th>
-                    <th>
-                        Observation
-                    </th>
-                    <th>
-                        Price
-                    </th>
-
-                    <th>
-                        Quantity
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var product in item.ProductsList)
-                {
+            <table class="table">
+                <thead>
                     <tr>
 
-                        <td>
-                            @Html.DisplayFor(modelItem => product.Name)
-                        </td>
+                        <th>
+                            Name
+                        </th>
+                        <th>Image</th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Observation
+                        </th>
+                        <th>
+                            Price
+                        </th>
 
-                        <td>
-                            @{
-                                    if (!string.IsNullOrWhiteSpace(product.Url))
-                                {
-                                        <img width="80" height="80" src=@product.Url />
-                                }
-                            }
-                        </td>
-
-                        <td>
-                                @Html.DisplayFor(modelItem => product.Description)
-                        </td>
-                        <td>
-                                @Html.DisplayFor(modelItem => product.Observation)
-                        </td>
-                        <td>
-                                @Html.DisplayFor(modelItem => product.Price)
-                        </td>
-
-                        <td>
-                                @Html.DisplayFor(modelItem => product.BuyQuant)
-                        </td>
-
+                        <th>
+                            Quantity
+                        </th>
                     </tr>
-                }
+                </thead>
+                <tbody>
+                    @foreach (var product in item.ProductsList)
+                    {
+                        <tr>
 
-            </tbody>
+                            <td>
+                                @Html.DisplayFor(modelItem => product.Name)
+                            </td>
 
-        </table>
+                            <td>
+                                @{
+                                    if (!string.IsNullOrWhiteSpace(product.Url))
+                                    {
+                                        <img width="80" height="80" src=@product.Url />
+                                    }
+                                }
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => product.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => product.Observation)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => product.Price)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => product.BuyQuant)
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+            <a class="nav-link text-dark" asp-area="" asp-controller="UserBuy" asp-route-id="@item.Id" asp-action="Print">Print invoice</a>
+            <hr />
+            
         }
         else
         {

@@ -13,6 +13,8 @@ using Entities.Entities;
 using FluentAssertions.Common;
 using Domain.Interfaces.UserBuyInterface;
 using Domain.Interfaces.InterfaceShopping;
+using Domain.Interfaces.InterfaceLogSystem;
+using Google.Protobuf.WellKnownTypes;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,11 +37,14 @@ builder.Services.AddSingleton(typeof(IGeneric<>), typeof(RepositoryGenerics<>));
 builder.Services.AddSingleton<IProduct, RepositoryProduct>();
 builder.Services.AddSingleton<IUserBuy, RepositoryUserBuy>();
 builder.Services.AddSingleton<IShopping, RepositoryShopping>();
+builder.Services.AddSingleton<ILogSystem, RepositoryLogSystem>();
 
 // APPLICATION INTERFACE
 builder.Services.AddSingleton<IProductApp, ProductApp>();
 builder.Services.AddSingleton<IUserBuyApp, UserBuyApp>();
 builder.Services.AddSingleton<IShoppingApp, ShoppingApp>();
+builder.Services.AddSingleton<ILogSystemApp, LogSystemApp>();
+
 
 // DOMAIN SERVICE
 builder.Services.AddSingleton<IServiceProduct, ServiceProduct>();

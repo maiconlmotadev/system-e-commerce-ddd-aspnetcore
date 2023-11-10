@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-﻿using Microsoft.AspNetCore.Mvc;
-=======
 ﻿using ApplicationApp.Interfaces;
 using Entities.Entities;
 using Entities.Entities.Enums;
@@ -8,17 +5,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
->>>>>>> master
 
 namespace Web_ECommerce.Controllers
 {
     public class BaseController : Controller
     {
-<<<<<<< HEAD
-        
-    }
-}
-=======
         public readonly ILogger<BaseController> Logger;
         public readonly UserManager<ApplicationUser> _userManager;
         public readonly ILogSystemApp _ILogSystemApp;
@@ -58,4 +49,3 @@ namespace Web_ECommerce.Controllers
 
 }
  
->>>>>>> master

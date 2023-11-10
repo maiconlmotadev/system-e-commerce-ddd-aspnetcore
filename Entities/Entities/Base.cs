@@ -14,10 +14,6 @@ namespace Entities.Entities
         public int Id { get; set; }
 
         [Display(Name = "Name")]
-<<<<<<< HEAD
-        public string Name { get; set; }
-=======
         public string? Name { get; set; }
->>>>>>> master
     }
 }

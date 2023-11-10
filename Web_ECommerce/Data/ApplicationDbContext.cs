@@ -8,10 +8,6 @@ namespace Web_ECommerce.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-<<<<<<< HEAD
-
-=======
->>>>>>> master
         }
     }
 }

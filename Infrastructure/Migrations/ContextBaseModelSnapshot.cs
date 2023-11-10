@@ -17,11 +17,7 @@ namespace Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-<<<<<<< HEAD
-                .HasAnnotation("ProductVersion", "6.0.20")
-=======
                 .HasAnnotation("ProductVersion", "6.0.23")
->>>>>>> master
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -109,11 +105,7 @@ namespace Infrastructure.Migrations
                         .HasColumnType("bit")
                         .HasColumnName("USR_STATE");
 
-<<<<<<< HEAD
-                    b.Property<string>("Telefhone")
-=======
                     b.Property<string>("Telephone")
->>>>>>> master
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("USR_TELEPHONE");
@@ -142,8 +134,6 @@ namespace Infrastructure.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-<<<<<<< HEAD
-=======
             modelBuilder.Entity("Entities.Entities.LogSystem", b =>
                 {
                     b.Property<int>("Id")
@@ -186,7 +176,6 @@ namespace Infrastructure.Migrations
                     b.ToTable("TB_LOGSYSTEM");
                 });
 
->>>>>>> master
             modelBuilder.Entity("Entities.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -452,8 +441,6 @@ namespace Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-<<<<<<< HEAD
-=======
             modelBuilder.Entity("Entities.Entities.LogSystem", b =>
                 {
                     b.HasOne("Entities.Entities.ApplicationUser", "ApplicationUser")
@@ -465,7 +452,6 @@ namespace Infrastructure.Migrations
                     b.Navigation("ApplicationUser");
                 });
 
->>>>>>> master
             modelBuilder.Entity("Entities.Entities.Product", b =>
                 {
                     b.HasOne("Entities.Entities.ApplicationUser", "ApplicationUser")

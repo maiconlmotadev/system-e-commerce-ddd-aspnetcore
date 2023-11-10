@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eaTbd90YUruvjFPYpoQFePDkT0aRrfYvMXw6WWppjlHAR2BaqPbM0qgyYOCP85HPg0t+G73UiTkytR+seapr4Q==",
+  "dgSpecHash": "1tjzhirEGaFrhT77z8lavielJKiu3DN8eeql76dc4KfSPmDb1QX6JyoqGJGYWG13bJ947MEjW8bTe2D6V2AXig==",
   "success": true,
-  "projectFilePath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj",
+  "projectFilePath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Maicon Mota\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Maicon Mota\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.18\\microsoft.aspnetcore.cryptography.internal.6.0.18.nupkg.sha512",

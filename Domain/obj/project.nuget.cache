@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h8itPNI+geLpvUsquZ5OMRO+D/0kr5gOYPH7x3TAhupEHweqagdapT/wlf/0EmlM59cvKZwmIhlB0WdXGF2ixQ==",
+  "dgSpecHash": "/zPWwgQH4drZHAe+/DxMhgG+Tgscm0CZONTH5NHAXXVs/J80EpFzuXDwT4d5iz3aj3xq9xA/4nFsbn/lr/WOvA==",
   "success": true,
-  "projectFilePath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj",
+  "projectFilePath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Maicon Mota\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.18\\microsoft.aspnetcore.cryptography.internal.6.0.18.nupkg.sha512",
     "C:\\Users\\Maicon Mota\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.18\\microsoft.aspnetcore.cryptography.keyderivation.6.0.18.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj": {}
+    "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj": {}
   },
   "projects": {
-    "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj": {
+    "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj",
+        "projectUniqueName": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj",
         "projectName": "ApplicationApp",
-        "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj",
+        "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj",
         "packagesPath": "C:\\Users\\Maicon Mota\\.nuget\\packages\\",
-        "outputPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Application\\obj\\",
+        "outputPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Maicon Mota\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj"
+              "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj"
               },
-              "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj": {
-                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj"
+              "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj": {
+                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj": {
+    "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj",
+        "projectUniqueName": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj",
+        "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Maicon Mota\\.nuget\\packages\\",
-        "outputPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Domain\\obj\\",
+        "outputPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Maicon Mota\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -90,8 +90,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj": {
-                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj"
+              "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj": {
+                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj"
               }
             }
           }
@@ -125,14 +125,14 @@
         }
       }
     },
-    "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj": {
+    "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj",
+        "projectUniqueName": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj",
+        "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\Maicon Mota\\.nuget\\packages\\",
-        "outputPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Entities\\obj\\",
+        "outputPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Maicon Mota\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -196,14 +196,14 @@
         }
       }
     },
-    "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj": {
+    "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Maicon Mota\\.nuget\\packages\\",
-        "outputPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\obj\\",
+        "outputPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Maicon Mota\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -220,11 +220,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj"
+              "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Domain\\Domain.csproj"
               },
-              "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj": {
-                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj"
+              "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj": {
+                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Entities\\Entities.csproj"
               }
             }
           }
@@ -282,14 +282,14 @@
         }
       }
     },
-    "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj": {
+    "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj",
+        "projectUniqueName": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj",
         "projectName": "Web_ECommerce",
-        "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj",
+        "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj",
         "packagesPath": "C:\\Users\\Maicon Mota\\.nuget\\packages\\",
-        "outputPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\obj\\",
+        "outputPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Maicon Mota\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -306,11 +306,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj": {
-                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj"
+              "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj": {
+                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj"
               },
-              "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj"
+              "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }

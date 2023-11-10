@@ -33,7 +33,11 @@ namespace UnitTestEcommerce
 
                 await _IServiceProduct.AddProduct(product);
 
+<<<<<<< HEAD
                 // Caso dê "Erro" em alguma coisa no Domain, virá uma mensagem
+=======
+                // Caso dê "Error" em alguma coisa no Domain, virá uma mensagem
+>>>>>>> master
                 Assert.IsFalse(product.Notifications.Any());
 
             }

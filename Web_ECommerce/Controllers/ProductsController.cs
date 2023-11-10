@@ -9,22 +9,38 @@ using Microsoft.VisualBasic;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 using System.Security.Permissions;
 using System.Security;
+<<<<<<< HEAD
+=======
+using Entities.Entities.Enums;
+>>>>>>> master
 
 namespace Web_ECommerce.Controllers
 {
     [Authorize]
 
+<<<<<<< HEAD
     public class ProductsController : Controller
     {
         public readonly UserManager<ApplicationUser> _userManager;
+=======
+    public class ProductsController : BaseController
+    {
+>>>>>>> master
         public readonly IProductApp _IProductApp;
         public readonly IUserBuyApp _IUserBuyApp;
         private IWebHostEnvironment _WebHostEnvironment;
 
+<<<<<<< HEAD
         public ProductsController(IProductApp IProductApp, UserManager<ApplicationUser> userManager, IUserBuyApp iUserBuyApp, IWebHostEnvironment webHostEnvironment)
         {
             _IProductApp = IProductApp;
             _userManager = userManager;
+=======
+        public ProductsController(IProductApp IProductApp, UserManager<ApplicationUser> userManager, IUserBuyApp iUserBuyApp, IWebHostEnvironment webHostEnvironment, ILogger<ProductsController> logger, ILogSystemApp ILogSystemApp)
+            : base(logger, userManager, ILogSystemApp)
+        {
+            _IProductApp = IProductApp;
+>>>>>>> master
             _IUserBuyApp = iUserBuyApp;
             _WebHostEnvironment = webHostEnvironment;
         }
@@ -68,9 +84,18 @@ namespace Web_ECommerce.Controllers
                     return View("Create", product);
                 }
                 await SaveProductImage(product);
+<<<<<<< HEAD
             }
             catch
             {
+=======
+
+                await LogEcommerce(EnumLogType.Informative, product);
+            }
+            catch(Exception error)
+            {
+                await LogEcommerce(EnumLogType.Error, error);
+>>>>>>> master
                 return View("Create", product); // not to be empty
             }
             return RedirectToAction(nameof(Index));
@@ -100,11 +125,22 @@ namespace Web_ECommerce.Controllers
                     ViewBag.Alert = true;
                     ViewBag.Message = "Verify, Error! Unable to verify product!";
 
+<<<<<<< HEAD
                     return View("Edit", product);
                 }
             }
             catch
             {
+=======
+                    await LogEcommerce(EnumLogType.Informative, product);
+
+                    return View("Edit", product);
+                }
+            }
+            catch(Exception error)
+            {
+                await LogEcommerce(EnumLogType.Error, error);
+>>>>>>> master
                 return View("Edit", product); // not to be empty
             }
             return RedirectToAction(nameof(Index));
@@ -126,14 +162,25 @@ namespace Web_ECommerce.Controllers
                 var productDelete = await _IProductApp.GetEntityById(id);
                 await _IProductApp.Delete(productDelete);
 
+<<<<<<< HEAD
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
+=======
+                await LogEcommerce(EnumLogType.Informative, productDelete);
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch(Exception error)
+            {
+                await LogEcommerce(EnumLogType.Error, error);
+>>>>>>> master
                 return View();
             }
         }
 
+<<<<<<< HEAD
         private async Task<string> ReturnLoggedUserId()
         {
             var userId = await _userManager.GetUserAsync(User);
@@ -142,6 +189,8 @@ namespace Web_ECommerce.Controllers
 
 
 
+=======
+>>>>>>> master
         [AllowAnonymous]
         [HttpGet("/api/ListProductsWithStock")]
         public async Task<JsonResult> ListProductsWithStock(string description)
@@ -155,8 +204,11 @@ namespace Web_ECommerce.Controllers
             return View( await _IProductApp.ListProductsUserCart(userId));
         }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> master
         // GET: ProductsController/Delete/5
         public async Task<IActionResult> RemoveCart(int id)
         {
@@ -175,14 +227,23 @@ namespace Web_ECommerce.Controllers
 
                 return RedirectToAction(nameof(ListProductsUserCart));
             }
+<<<<<<< HEAD
             catch
             {
+=======
+            catch(Exception error)
+            {
+                await LogEcommerce(EnumLogType.Error, error);
+>>>>>>> master
                 return View();
             }
         }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> master
         public async Task SaveProductImage(Product viewProduct)
         {
             try
@@ -212,6 +273,10 @@ namespace Web_ECommerce.Controllers
             }
             catch (Exception error)
             {
+<<<<<<< HEAD
+=======
+                await LogEcommerce(EnumLogType.Error, error);
+>>>>>>> master
             }
 
         }

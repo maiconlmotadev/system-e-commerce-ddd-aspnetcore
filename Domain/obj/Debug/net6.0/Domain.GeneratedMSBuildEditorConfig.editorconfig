@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Domain
-build_property.ProjectDir = E:\SCHOOL\PROJECTS\DEV NET CORE Valdir Ferreira\system-e-commerce-ddd-aspnetcore\Domain\
+build_property.ProjectDir = E:\SCHOOL\PROJECTS\DEVNETCORE EcommerceDDD\system-e-commerce-ddd-aspnetcore\Domain\

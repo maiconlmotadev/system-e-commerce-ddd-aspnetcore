@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t6lk5RFMq/LrS+X+S9131xM9c3hgm0uN0Oo8eqZjz9EMCHUldxOMU9iCDdHQ39iiDoVKt2nwqEKuzeFYBdclLg==",
+  "dgSpecHash": "a5t8WqF6sxjOr/hbVgylyycyf2BdtASEfcbX0MQXr4IN53Ge+7SnlHg8tKnb4T/jnl3gpMn6lWo7xrUIlg75AQ==",
   "success": true,
-  "projectFilePath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj",
+  "projectFilePath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Maicon Mota\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Maicon Mota\\.nuget\\packages\\fluentassertions\\6.11.0\\fluentassertions.6.11.0.nupkg.sha512",

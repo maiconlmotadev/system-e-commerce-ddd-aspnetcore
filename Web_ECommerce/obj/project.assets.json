@@ -12235,11 +12235,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj",
+      "projectUniqueName": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj",
       "projectName": "Web_ECommerce",
-      "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj",
+      "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\Web_ECommerce.csproj",
       "packagesPath": "C:\\Users\\Maicon Mota\\.nuget\\packages\\",
-      "outputPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\obj\\",
+      "outputPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Web_ECommerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Maicon Mota\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12256,11 +12256,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj": {
-              "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj"
+            "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj": {
+              "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Application\\ApplicationApp.csproj"
             },
-            "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj"
+            "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

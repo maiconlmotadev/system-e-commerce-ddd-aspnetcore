@@ -8,7 +8,11 @@ namespace Entities.Entities.Enums
 {
     public enum EnumLogType
     {
+<<<<<<< HEAD
         Erro = 0,
+=======
+        Error = 0,
+>>>>>>> master
         Informative = 1,
     }
 }

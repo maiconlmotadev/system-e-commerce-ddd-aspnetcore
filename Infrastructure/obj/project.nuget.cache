@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Yojqe6C7c3Rf5fv7A+45f1qNIePHQ16EfYFaW5zWUuvRP7hsLbzl6XApapPnhpZCOGLAeHBoUirCilHJnsg1NA==",
+  "dgSpecHash": "UKqRXFS2AE2OxETraDn+HVp/5sp4gcwmOg5n6yDQMpcsoOv3frs3Rhhf6e9+13GaBFdpdqok1sPVj37eYIVeUg==",
   "success": true,
-  "projectFilePath": "E:\\SCHOOL\\PROJECTS\\DEV NET CORE Valdir Ferreira\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "E:\\SCHOOL\\PROJECTS\\DEVNETCORE EcommerceDDD\\system-e-commerce-ddd-aspnetcore\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Maicon Mota\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Maicon Mota\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",

@@ -1,0 +1,123 @@
+﻿@model IEnumerable<Entities.Entities.UserBuy>
+
+@{
+    ViewData["Title"] = "My Buys";
+}
+
+<div>
+    <h1>My Buys</h1>
+
+    @foreach (var item in Model)
+    {
+        if (item.ProductsList.Any())
+        {
+            
+            <dl class="row">
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.DeliveryAddress)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => item.DeliveryAddress)
+
+                </dd>
+
+                <dt class="col-sm-2">
+                    Postal Code
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => item.ApplicationUser.CPost)
+                </dd>
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ProductsQuantity)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => item.ProductsQuantity)
+                </dd>
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.TotalPrice)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => item.TotalPrice)
+                </dd>
+
+            </dl>
+            <h4>Products purchased</h4>
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+
+                        <th>
+                            Name
+                        </th>
+                        <th>Image</th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Observation
+                        </th>
+                        <th>
+                            Price
+                        </th>
+
+                        <th>
+                            Quantity
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in item.ProductsList)
+                    {
+                        <tr>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => product.Name)
+                            </td>
+
+                            <td>
+                                @{
+                                    if (!string.IsNullOrWhiteSpace(product.Url))
+                                    {
+                                        <img width="80" height="80" src=@product.Url />
+                                    }
+                                }
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => product.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => product.Observation)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => product.Price)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => product.BuyQuant)
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+            <a class="nav-link text-dark" asp-area="" asp-controller="UserBuy" asp-route-id="@item.Id" asp-action="Print">Print invoice</a>
+            <hr />
+            
+        }
+        else
+        {
+            <h3>There are no purchases</h3>
+        }
+    }
+
+</div>
+

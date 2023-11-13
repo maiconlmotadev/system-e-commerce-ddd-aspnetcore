@@ -203,7 +203,7 @@ namespace Web_ECommerce.Controllers
                     // salvar
                     viewProduct.Image.CopyTo(new FileStream(DirectorySaveFile, FileMode.Create));
                     // url da imagem para salvar no DB
-                    product.Url = string.Concat("https://localhost:44349", "/imgProducts/", FileName);
+                    product.Url = string.Concat("https://localhost:7256", "/imgProducts/", FileName); 
                     // atualizando o produto
                     await _IProductApp.UpdateProduct(product);
                 }

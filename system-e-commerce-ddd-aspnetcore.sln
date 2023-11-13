@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web_ECommerce", "Web_EComme
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Test", "6 - Test", "{0A30E16E-24E5-4A6A-822A-88ADD4BBBA13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEcommerceDDD", "TestEcommerceDDD\TestEcommerceDDD.csproj", "{3943628C-F597-4698-AB77-BE7FB9B686C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEcommerceDDD", "TestEcommerceDDD\TestEcommerceDDD.csproj", "{3943628C-F597-4698-AB77-BE7FB9B686C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

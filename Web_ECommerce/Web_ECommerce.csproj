@@ -8,10 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\JsonView.js" />
     <Content Remove="wwwroot\js\JsProductSale.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\JsonView.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\JsonView.js" />
     <None Include="wwwroot\js\JsProductSale.js" />
   </ItemGroup>
 

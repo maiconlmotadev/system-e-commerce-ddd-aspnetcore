@@ -103,8 +103,6 @@ namespace Web_ECommerce.Controllers
                     ViewBag.Alert = true;
                     ViewBag.Message = "Verify, Error! Unable to verify product!";
 
-                    await LogEcommerce(EnumLogType.Informative, product);
-
                     return View("Edit", product);
                 }
             }
@@ -113,6 +111,9 @@ namespace Web_ECommerce.Controllers
                 await LogEcommerce(EnumLogType.Error, error);
                 return View("Edit", product); // not to be empty
             }
+
+            await LogEcommerce(EnumLogType.Informative, product);
+
             return RedirectToAction(nameof(Index));
         }
 

@@ -14,7 +14,7 @@ using Entities.Entities.Enums;
 namespace Web_ECommerce.Controllers
 {
     [Authorize]
-
+    [LogActionFilter]
     public class ProductsController : BaseController
     {
         public readonly IProductApp _IProductApp;

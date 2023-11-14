@@ -9,14 +9,14 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.JsonInformation)
+           @*  @Html.DisplayNameFor(model => model.JsonInformation) *@
         </dt>
         <dd class="col-sm-10">
 
             <div id="json"></div>
 
             <input asp-for="JsonInformation" type="hidden" />
-            @* @Html.DisplayFor(model => model.JsonInformation) *@
+            @Html.DisplayFor(model => model.JsonInformation)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.LogType)
